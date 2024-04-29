@@ -1,0 +1,14 @@
+:host {
+    height: 100vh;
+    width: 4rem;
+    background-color: var(--color-accent900);
+    color: var(--color-accent400);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidebar__item {
+    font-size: var(--size-base);
+    /* color: var(--color-accent400); */
+}
