@@ -15,3 +15,14 @@
 
 /* 2xl */
 /* @media (min-width: 1536px) {} */
+
+.content__header {
+    width: 100vw;
+    height: 4rem;
+    background-color: var(--color-accent500);
+    display: flex;
+}
+
+.content__main {
+    display: flex;
+}

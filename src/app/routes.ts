@@ -5,7 +5,7 @@ import { ContentChartsComponent } from './content-charts/content-charts.componen
 
 const routeConfig: Routes = [
     {
-      path: '',
+      path: 'today',
       component: ContentTodayComponent,
       title: 'Weather - Today'
     },
@@ -18,6 +18,11 @@ const routeConfig: Routes = [
       path: 'charts',
       component: ContentChartsComponent,
       title: 'Weather - Charts'
+    },
+    {
+      path: '',
+      redirectTo: 'today',
+      pathMatch: 'full'
     }
   ];
   

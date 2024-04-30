@@ -26,7 +26,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/utils.css"
+              "src/utils.css",
+              "src/modern-normalize.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
