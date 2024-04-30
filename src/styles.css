@@ -11,6 +11,8 @@
     --color-accent700: #1d4ed8;
     --color-accent500: #3b82f6;
     --color-accent400: #60a5fa;
+    --color-accent300: #93c5fd;
+    --color-light: #e2e8f0;
 
     /* font sizes */
     --size-xxs: 0.5rem;
@@ -30,6 +32,14 @@
     --size-10xl: 10rem;
 }
 
+.light-mode {
+    /* dark turns to light */
+    --color-slate900: #e2e8f0;
+    --color-slate800: #f1f5f9;
+    --color-slate200: #0f172a;
+    --color-slate100: #1e293b;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -41,8 +51,9 @@ html {
 
 body {
     font-family: 'General Sans', sans-serif;
-    background-color: var(--color-slate200);
-    color: var(--color-slate900);
+    background-color: var(--color-slate900);
+    color: var(--color-slate100);
+    overflow: hidden;
 }
 
 a {
@@ -62,4 +73,5 @@ button {
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     font-style: normal;
+    font-size: var(--size-base);
 }

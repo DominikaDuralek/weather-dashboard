@@ -7,5 +7,10 @@
     display: grid;
     grid-template-rows: 100px 100px 100px;
     grid-template-columns: 100px 100px 100px;
-    background-color: var(--color-slate100);
+    background-color: var(--color-slate800);
+}
+
+.today__header__line {
+    border: 1px solid var(--color-slate200);
+    height: 1rem;
 }

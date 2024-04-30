@@ -25,11 +25,13 @@
               "src/assets"
             ],
             "styles": [
+              "src/modern-normalize.css",
               "src/styles.css",
-              "src/utils.css",
-              "src/modern-normalize.css"
+              "src/utils.css"
             ],
-            "scripts": [],
+            "scripts": [
+              
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {

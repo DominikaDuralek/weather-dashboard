@@ -19,10 +19,18 @@
 .content__header {
     width: 100vw;
     height: 4rem;
-    background-color: var(--color-accent500);
     display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 2rem;
+}
+
+.content__header__text {
+    font-size: var(--size-2xl);
+    font-weight: 500;
 }
 
 .content__main {
     display: flex;
+    padding: 2rem;
 }
