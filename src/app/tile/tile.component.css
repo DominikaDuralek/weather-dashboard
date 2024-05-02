@@ -1,0 +1,12 @@
+:host {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-accent900);
+    color:  var(--color-accent300);
+    font-size: var(--size-l);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}

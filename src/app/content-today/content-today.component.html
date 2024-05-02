@@ -10,19 +10,21 @@
 <main class="content__main">
     <section class="today__tiles-grid">
         <!-- current data tiles -->
-        <p>temp</p>
-        <p>pressure</p>
-        <p>humidity</p>
-        <p>rain</p>
-        <p>wind speed</p>
-        <p>wind direction</p>
-        <p>light</p>
-        <p>pm10</p>
-        <p>pm25</p>
+        <tile [tileClass]="'tileTemperature'"></tile>
+        <tile [tileClass]="'tileHumidity'"></tile>
+        <tile [tileClass]="'tilePressure'"></tile>
+
+        <tile [tileClass]="'tileRain'"></tile>
+        <tile [tileClass]="'tileWindSpeed'"></tile>
+        <tile [tileClass]="'tileWindDirection'"></tile>
+
+        <tile [tileClass]="'tileLight'"></tile>
+        <tile [tileClass]="'tilePm10'"></tile>
+        <tile [tileClass]="'tilePm25'"></tile>
     </section>
     <section class="today__data">
         <!-- current data chart and table -->
-        <div style="background-color: darkcyan; padding: 2rem;"> data chart </div>
-        <div style="background-color: darkolivegreen; padding: 2rem;"> data table </div>
+        <div class="today__chart-container"> data chart </div>
+        <div class="today__table-container"> data table </div>
     </section>
 </main>
