@@ -25,20 +25,15 @@
     align-items: center;
 }
 
-.today__chart-container {
-    width: 30rem;
-    height: 16rem;
-    background-color: var(--color-slate800);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+.today__chart-container,
 .today__table-container {
-    width: 30rem;
-    height: 16rem;
+    width: 36rem;
+    height: 16.5rem;
     background-color: var(--color-slate800);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 1rem;
+    border-radius: 6px;
 }

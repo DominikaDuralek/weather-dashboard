@@ -4,50 +4,26 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class WeatherDataService {
+  // getting all the needed data
+  // id, date, time, temp, hum, press, rain, wspeed, wdir, light, pm10, pm25
   constructor() { }
 
-  getTemperature() {
-    const temperature = 20;
-    return temperature;
+  // get newest record
+  getNewestRecord() {
+    let newestRecord = [0, '02.05.2024', '12:00', 1, 2, 3, 4, 5, 'N', 7, 8, 9];
+    return newestRecord;
   }
 
-  getHumidity() {
-    const humidity = 30;
-    return humidity;
-  }
-
-  getPressure() {
-    const pressure = 10;
-    return pressure;
-  }
-
-  getRain() {
-    const rain = 100;
-    return rain;
-  }
-
-  getWindSpeed() {
-    const windSpeed = 12;
-    return windSpeed;
-  }
-
-  getWindDirection() {
-    const windDirection = 'N';
-    return windDirection;
-  }
-
-  getLight() {
-    const light = 50;
-    return light;
-  }
-
-  getPm10() {
-    const pm10 = 15;
-    return pm10;
-  }
-
-  getPm25() {
-    const pm25 = 16;
-    return pm25;
+  // get all records
+  getAllRecords() {
+    let allRecords = [
+      [1, '02.05.2024', '12:00', 10, 10, 10, 10, 10, 'N', 10, 10, 10],
+      [2, '02.05.2024', '12:00', 10, 10, 10, 10, 10, 'N', 10, 10, 10],
+      [3, '02.05.2024', '12:00', 10, 10, 10, 10, 10, 'N', 10, 10, 10],
+      [4, '02.05.2024', '12:00', 10, 10, 10, 10, 10, 'N', 10, 10, 10],
+      [5, '02.05.2024', '12:00', 10, 10, 10, 10, 10, 'N', 10, 10, 10],
+    ];
+    
+    return allRecords;
   }
 }

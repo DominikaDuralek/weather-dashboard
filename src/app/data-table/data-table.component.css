@@ -1,0 +1,27 @@
+:host {
+    background-color: var(--color-slate700);
+    color: var(--color-slate200);
+}
+
+table {
+    border-collapse: collapse;
+    font-size: var(--size-s);
+}
+
+tr, th, td{
+    border: 1px solid white;
+    padding: 0.5rem;
+}
+
+mat-table {
+    background-color: var(--color-slate700);
+    max-height: 500px;
+}
+
+mat-header-cell {
+    color: var(--color-slate200);
+}
+
+mat-cell {
+    color: var(--color-slate200);
+}
