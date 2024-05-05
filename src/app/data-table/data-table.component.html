@@ -16,6 +16,11 @@
           <option value="Pm25">Pm 25</option>
         </select>
       </form>
+      <mat-button-toggle-group #tableSortButton="matButtonToggleGroup">
+        <mat-button-toggle value="asc">ASC</mat-button-toggle>
+        <mat-button-toggle value="desc">DESC</mat-button-toggle>
+      </mat-button-toggle-group>
+      <p>Selected Value: {{ tableSortButton.value }}</p>
 </div>
 <mat-table #table [dataSource]="dataSource">
     <ng-container matColumnDef="id">

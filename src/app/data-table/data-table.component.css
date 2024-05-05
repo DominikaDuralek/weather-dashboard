@@ -3,14 +3,9 @@
     color: var(--color-slate200);
 }
 
-table {
-    border-collapse: collapse;
-    font-size: var(--size-s);
-}
-
-tr, th, td{
-    border: 1px solid white;
-    padding: 0.5rem;
+.table__settings {
+    display: flex;
+    flex-direction: row;
 }
 
 mat-table {
