@@ -72,7 +72,7 @@ export class DataTableComponent{
   // update table data after a change
   updateTableDataSorted(){
     this.weatherDataSorted = [];
-    this.dataSource = this.weatherDataService.getSortedRecords(this.sortValue, this.sortOrder, this.dateFrom, this.dateTo);
+    this.dataSource = this.weatherDataService.getRecordsTable(this.sortValue, this.sortOrder, this.dateFrom, this.dateTo);
   }
 
 }
