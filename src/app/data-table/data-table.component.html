@@ -1,5 +1,11 @@
 <div class="table__settings">
     <form>
+        <label for="date-from">From:</label>
+        <input #tableDataFrom type="date" id="date-from" name="date-from" (change)="onSortDataFromChange()">
+
+        <label for="date-to">To:</label>
+        <input #tableDataTo type="date" id="date-to" name="date-to" (change)="onSortDataToChange()">
+
         <label for="table__sort">Sort by:</label>
         <select #tableSortValue name="table__sort" id="table__sort" (change)="onSortValueChange()">
           <option value="Id">Id</option>
@@ -15,11 +21,12 @@
           <option value="Pm10">Pm 10</option>
           <option value="Pm25">Pm 25</option>
         </select>
+
+        <mat-button-toggle-group #tableSortOrderButton="matButtonToggleGroup" (change)="onSortOrderChange($event)">
+            <mat-button-toggle value="asc">ASC</mat-button-toggle>
+            <mat-button-toggle value="desc">DESC</mat-button-toggle>
+        </mat-button-toggle-group>
       </form>
-      <mat-button-toggle-group #tableSortOrderButton="matButtonToggleGroup" (change)="onSortOrderChange($event)">
-        <mat-button-toggle value="asc">ASC</mat-button-toggle>
-        <mat-button-toggle value="desc">DESC</mat-button-toggle>
-      </mat-button-toggle-group>
 </div>
 <mat-table #table [dataSource]="dataSource">
     <ng-container matColumnDef="id">
