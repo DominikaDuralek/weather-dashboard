@@ -30,33 +30,37 @@ export class DataTableComponent{
   displayedColumns = ['id', 'date', 'time', 'temperature', 'humidity', 'pressure', 'rain', 'windspeed', 'winddirection', 'light', 'pm10', 'pm25'];
 
   weatherDataSorted: (string | number)[][] = [];
-  sortValue: string = 'Id';
+  sortValue: number = 0;
   sortOrder: string = 'asc';
-  dateFrom: string = '';
-  dateTo: string = '';
+  // Set base day/week (today)
+  dateToday: Date = new Date();
+  dateFrom: string = this.dateToday.getFullYear() + '-' + (this.dateToday.getMonth() + 1).toString().padStart(2, '0') + '-' + this.dateToday.getDate().toString().padStart(2, '0');
+  dateTo: string = this.dateToday.getFullYear() + '-' + (this.dateToday.getMonth() + 1).toString().padStart(2, '0') + '-' + this.dateToday.getDate().toString().padStart(2, '0');
 
-  // initial table data
+  // Initial table data
   ngAfterViewInit() {
-    this.updateTableData();
+    this.tableDataFrom.nativeElement.value = this.dateFrom;
+    this.tableDataTo.nativeElement.value = this.dateTo;
+    this.updateTableDataSorted();
   }
 
   updateTableData() {
     this.dataSource = this.weatherDataAll;
   }
 
-  // start date changed
+  // Start date changed
   onSortDataFromChange() {
     this.dateFrom = this.tableDataFrom.nativeElement.value;
     this.updateTableDataSorted();
   }
 
-  // end date changed
+  // End date changed
   onSortDataToChange() {
     this.dateTo = this.tableDataTo.nativeElement.value;
     this.updateTableDataSorted();
   }
 
-  // sort by changed
+  // Sort by changed
   onSortValueChange() {
     this.sortValue = this.tableSortValue.nativeElement.value;
     this.updateTableDataSorted();
@@ -69,7 +73,7 @@ export class DataTableComponent{
     this.updateTableDataSorted();
   }
 
-  // update table data after a change
+  // Update table data after a change
   updateTableDataSorted(){
     this.weatherDataSorted = [];
     this.dataSource = this.weatherDataService.getRecordsTable(this.sortValue, this.sortOrder, this.dateFrom, this.dateTo);

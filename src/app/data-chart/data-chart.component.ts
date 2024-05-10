@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef, inject } from '@angular/core';
 import { WeatherDataService } from '../weather-data.service'
 import { ChartComponent, NgApexchartsModule } from "ng-apexcharts";
 import ApexCharts from 'apexcharts';
+import { setEngine } from 'crypto';
 
 @Component({
   selector: 'data-chart',
@@ -48,6 +49,10 @@ export class DataChartComponent {
     };
   }
 
+  ngAfterViewInit() {
+    this.dayPicker.nativeElement.value = this.selectedDay;
+  }
+
   onSelectedValueChanged() {
     this.selectedValue = this.chartValue.nativeElement.value;
     this.updateChartData();
@@ -59,10 +64,12 @@ export class DataChartComponent {
       // Show weekPicker, hide dayPicker
       document.querySelector(".dayPicker")?.setAttribute("style", "display: none;");
       document.querySelector(".weekPicker")?.setAttribute("style", "display: inline-block;");
+      this.weekPicker.nativeElement.value = this.selectedWeek;
     } else {
       // Show dayPicker, hide weekPicker
       document.querySelector(".weekPicker")?.setAttribute("style", "display: none;");
       document.querySelector(".dayPicker")?.setAttribute("style", "display: inline-block;");
+      this.dayPicker.nativeElement.value = this.selectedDay;
     }
 
     this.updateChartData();
@@ -106,3 +113,4 @@ function getWeekNumber(dateString: string): string {
 
   return weekNumberString;
 }
+
