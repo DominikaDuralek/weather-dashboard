@@ -1,4 +1,4 @@
-<label for="table__sort">Sort by:</label>
+<label for="table__sort">Values:</label>
 <select #chartValue name="chart__value" id="chart__value" (change)="onSelectedValueChanged()">
     <option value=3>Temperature</option>
     <option value=4>Humidity</option>
@@ -14,6 +14,10 @@
   <option value="Day">Day</option>
   <option value="Week">Week</option>
 </select>
+
+<input #dayPicker type="date" class="dayPicker" name="dayPicker" (change)="onSelectedDayChanged()">
+<input #weekPicker type="week" class="weekPicker" name="weekPicker" (change)="onSelectedWeekChanged()">
+
 <div class="chart-container">
     <apx-chart #apexChart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"></apx-chart>
 </div>

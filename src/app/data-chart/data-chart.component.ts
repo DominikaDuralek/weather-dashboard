@@ -15,14 +15,20 @@ import ApexCharts from 'apexcharts';
 export class DataChartComponent {
   @ViewChild('chartValue') chartValue!: ElementRef;
   @ViewChild('chartType') chartType!: ElementRef;
+  @ViewChild('dayPicker') dayPicker!: ElementRef;
+  @ViewChild('weekPicker') weekPicker!: ElementRef;
   @ViewChild('apexChart') apexChart!: ChartComponent;
 
   weatherDataService: WeatherDataService = inject(WeatherDataService);
 
   chartOptions: any;
-  selectedValue: string = 'Temperature';
+  selectedValue: number = 3;
   selectedType: string = 'Day';
-
+  // Set base day/week (today)
+  dateToday: Date = new Date();
+  selectedDay: string = this.dateToday.getFullYear() + '-' + (this.dateToday.getMonth() + 1).toString().padStart(2, '0') + '-' + this.dateToday.getDate().toString().padStart(2, '0');
+  selectedWeek: string = getWeekNumber(this.selectedDay);
+  
   constructor() {
     this.chartOptions = {
       chart: {
@@ -33,11 +39,11 @@ export class DataChartComponent {
       series: [
         {
           name: 'Values',
-          data: [30, 40, 35, 50, 49, 60, 70, 91, 400, 350, 340, 300]
+          data: this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2])
         }
       ],
       xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        categories: this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[1]),
       },
     };
   }
@@ -49,12 +55,32 @@ export class DataChartComponent {
 
   onSelectedTypeChanged() {
     this.selectedType = this.chartType.nativeElement.value;
+    if (this.selectedType == 'Week') {
+      // Show weekPicker, hide dayPicker
+      document.querySelector(".dayPicker")?.setAttribute("style", "display: none;");
+      document.querySelector(".weekPicker")?.setAttribute("style", "display: inline-block;");
+    } else {
+      // Show dayPicker, hide weekPicker
+      document.querySelector(".weekPicker")?.setAttribute("style", "display: none;");
+      document.querySelector(".dayPicker")?.setAttribute("style", "display: inline-block;");
+    }
+
+    this.updateChartData();
+  }
+
+  onSelectedDayChanged() {
+    this.selectedDay = this.dayPicker.nativeElement.value;
+    this.updateChartData();
+  }
+
+  onSelectedWeekChanged() {
+    this.selectedWeek = this.weekPicker.nativeElement.value;
     this.updateChartData();
   }
 
   updateChartData() {
-    let valuesArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType).map(record => [record[2]]);
-    let xaxisArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType).map(record => [record[1]]);
+    let valuesArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2]);
+    let xaxisArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[1]);
 
     // Update chartOptions with the new data
     this.chartOptions = {
@@ -62,10 +88,21 @@ export class DataChartComponent {
       series: [{ data: valuesArray }],
       xaxis: { categories: xaxisArray }
     };
-  
+
     // Manually trigger update/rendering of the chart
     this.apexChart.updateOptions(this.chartOptions);
-    console.log(this.chartOptions);
   }
 
+}
+
+function getWeekNumber(dateString: string): string {
+  const date = new Date(dateString);
+  // Adjust the date to Thursday of the same week to make the calculation more accurate
+  date.setDate(date.getDate() + 4 - (date.getDay() || 7));
+  const yearStart = new Date(date.getFullYear(), 0, 1);
+  // Calculate the week number
+  const weekNumber = Math.ceil((((+date - +yearStart) / 86400000) + 1) / 7);
+  const weekNumberString = date.getFullYear() + "-W" + weekNumber;
+
+  return weekNumberString;
 }
