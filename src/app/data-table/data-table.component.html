@@ -8,23 +8,23 @@
 
         <label for="table__sort">Sort by:</label>
         <select #tableSortValue name="table__sort" id="table__sort" (change)="onSortValueChange()">
-          <option value=0>Id</option>
-          <option value=1>Date</option>
-          <option value=3>Temperature</option>
-          <option value=4>Humidity</option>
-          <option value=5>Pressure</option>
-          <option value=6>Rain</option>
-          <option value=7>Wind Speed</option>
-          <option value=9>Light</option>
-          <option value=10>Pm 10</option>
-          <option value=11>Pm 25</option>
+            <option value=0>Id</option>
+            <option value=1>Date</option>
+            <option value=3>Temperature</option>
+            <option value=4>Humidity</option>
+            <option value=5>Pressure</option>
+            <option value=6>Rain</option>
+            <option value=7>Wind Speed</option>
+            <option value=9>Light</option>
+            <option value=10>Pm 10</option>
+            <option value=11>Pm 25</option>
         </select>
 
         <mat-button-toggle-group #tableSortOrderButton="matButtonToggleGroup" (change)="onSortOrderChange($event)">
             <mat-button-toggle value="asc">ASC</mat-button-toggle>
             <mat-button-toggle value="desc">DESC</mat-button-toggle>
         </mat-button-toggle-group>
-      </form>
+    </form>
 </div>
 <mat-table #table [dataSource]="dataSource">
     <ng-container matColumnDef="id">

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { get } from 'http';
 
 @Injectable({
   providedIn: 'root'
@@ -26,10 +25,8 @@ export class WeatherDataService {
   getRecordsTable(sortValue: number, sortOrder: string, dateFrom: string, dateTo: string) {
     let allRecords = this.getAllRecords();
 
+    // Sort value and sort order - asc/desc
     allRecords.sort((a, b) => a[sortValue] - b[sortValue]);
-
-    // TODO
-    // sort value and sort order - asc/desc
     if(sortOrder == 'desc') {
       allRecords = allRecords.reverse();
     }
@@ -55,7 +52,6 @@ export class WeatherDataService {
       extractedData = allRecords.map(record => [record[1], record[2], record[selectedValue]]);
       // Only return data from the chosen day
       extractedData = extractedData.filter(record => record[0] == selectedDay);
-      console.log('Day data: ' + extractedData.length)
       return extractedData;
     } else {
       // Week chart - values every hour (average)
@@ -66,13 +62,6 @@ export class WeatherDataService {
 
       // Calculate hourly averages
       const hourlyAverages = calculateHourlyAverages(extractedData);
-
-      // Output hourly averages
-      hourlyAverages.forEach(([date, time, average]) => {
-          console.log(`Date: ${date}, Time: ${time}, Average: ${average}`);
-      });
-
-      console.log('Week data: ' + hourlyAverages.length)
 
       return hourlyAverages;
     }
@@ -92,33 +81,38 @@ function getWeekNumber(dateString: string): string {
   return weekNumberString;
 }
 
-// Mock data generation
-function generateData2(): Array<Array<any>> {
-  const data: Array<Array<any>> = [];
-  let id = 1;
+// Function to calculate hourly averages for each measurement
+function calculateHourlyAverages(data: Array<Array<any>>): Array<Array<any>> {
+  const hourlyAverages = new Map<string, { sum: number; count: number }>(); // Map to store hourly sum and count
 
-  const startDate = new Date('2024-05-01T00:00:00');
-  const endDate = new Date('2024-05-31T23:45:00');
-  // id, date, time, temp, hum, press, rain, wspeed, wdir, light, pm10, pm25
-  const measurements = [10, 10, 10, 10, 10, 'N', 10, 10, 10];
+  // Iterate through each data row
+  for (const row of data) {
+      const [date, time, measurement] = row;
+      const hour = time.split(':')[0]; // Extract hour from time
 
-  for (let date = new Date(startDate); date <= endDate; date.setMinutes(date.getMinutes() + 15)) {
-      const formattedDate = date.toISOString().split('T')[0];
-      const formattedTime = date.toTimeString().split(' ')[0];
+      // Key for the map is the hour (hour format = HH:00)
+      const key = `${date} ${hour}:00`;
 
-      const row = [
-          id++,
-          formattedDate,
-          formattedTime,
-          ...measurements.map(value => typeof value === 'number' ? Math.floor(Math.random() * 21) : value)
-      ];
-
-      data.push(row);
+      // Update sum and count for the hour
+      if (!hourlyAverages.has(key)) {
+          hourlyAverages.set(key, { sum: 0, count: 0 });
+      }
+      const { sum, count } = hourlyAverages.get(key)!;
+      hourlyAverages.set(key, { sum: sum + measurement, count: count + 1 });
   }
 
-  return data;
+    // Calculate averages for each hour
+    const hourlyAveragesResult: Array<Array<any>> = [];
+    for (const [key, { sum, count }] of hourlyAverages) {
+        const average = sum / count;
+        const [date, time] = key.split(' ');
+        hourlyAveragesResult.push([date, time, average]);
+    }
+
+    return hourlyAveragesResult;
 }
 
+// Mock data generation
 function generateData(): Array<Array<any>> {
   const data: Array<Array<any>> = [];
   let id = 1;
@@ -138,50 +132,17 @@ function generateData(): Array<Array<any>> {
       for (let minute = 0; minute < 60; minute += 15) {
         const formattedDate = date.toISOString().split('T')[0];
         const formattedTime = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
-
         const row = [
           id++,
           formattedDate,
           formattedTime,
           ...measurements.map(value => typeof value === 'number' ? Math.floor(Math.random() * 21) : value)
         ];
-
         data.push(row);
       }
     }
   }
 
   return data;
-}
-
-// Function to calculate hourly averages for each measurement
-function calculateHourlyAverages(data: Array<Array<any>>): Array<Array<any>> {
-  const hourlyAverages = new Map<string, { sum: number; count: number }>(); // Map to store hourly sum and count
-
-  // Iterate through each data row
-  for (const row of data) {
-      const [date, time, measurement] = row;
-      const hour = time.split(':')[0]; // Extract hour from time
-
-      // Key for the map is the hour
-      const key = `${date} ${hour}:00`; // We'll consider the hour as HH:00 format
-
-      // Update sum and count for the hour
-      if (!hourlyAverages.has(key)) {
-          hourlyAverages.set(key, { sum: 0, count: 0 });
-      }
-      const { sum, count } = hourlyAverages.get(key)!;
-      hourlyAverages.set(key, { sum: sum + measurement, count: count + 1 });
-  }
-
-    // Calculate averages for each hour
-    const hourlyAveragesResult: Array<Array<any>> = [];
-    for (const [key, { sum, count }] of hourlyAverages) {
-        const average = sum / count;
-        const [date, time] = key.split(' ');
-        hourlyAveragesResult.push([date, time, average]);
-    }
-
-    return hourlyAveragesResult;
 }
 
