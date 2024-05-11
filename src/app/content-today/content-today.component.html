@@ -2,14 +2,14 @@
 <header class="content__header">
     <h1 class="content__header__text">Today</h1>
     <div class="today__header__line"></div>
-    <h1 class="content__header__text">30.04.2024</h1>
+    <h1 class="content__header__text">{{ currentDate }}</h1>
     <div class="today__header__line"></div>
-    <h1 class="content__header__text">12:00</h1>
+    <h1 class="content__header__text">{{ currentTime }}</h1>
 </header>
 <hr>
 <main class="content__main">
     <section class="today__tiles-grid">
-        <!-- current data tiles -->
+        <!-- Current data tiles -->
         <tile [tileClass]="'tileTemperature'"></tile>
         <tile [tileClass]="'tileHumidity'"></tile>
         <tile [tileClass]="'tilePressure'"></tile>
@@ -23,7 +23,7 @@
         <tile [tileClass]="'tilePm25'"></tile>
     </section>
     <section class="today__data">
-        <!-- current data chart and table -->
+        <!-- Current data chart and table -->
         <div class="today__chart-container"> 
             <data-chart></data-chart>
         </div>
