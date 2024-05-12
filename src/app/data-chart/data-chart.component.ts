@@ -33,8 +33,8 @@ export class DataChartComponent {
   constructor() {
     this.chartOptions = {
       chart: {
-        height: 250,
         width: 500,
+        height: 250,
         type: 'line',
       },
       series: [

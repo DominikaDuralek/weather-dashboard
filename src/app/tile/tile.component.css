@@ -8,6 +8,27 @@
     font-size: var(--size-l);
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     border-radius: 6px;
+    padding-bottom: 2rem;
+}
+
+.tile__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tile__text {
+    font-size: var(--size-base);
+}
+
+#pieChart {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    margin-bottom: -3rem;
 }

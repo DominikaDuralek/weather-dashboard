@@ -10,7 +10,7 @@ export class WeatherDataService {
 
   // Get newest record
   getNewestRecord() {
-    let newestRecord = [0, '02.05.2024', '12:00', 1, 2, 3, 4, 5, 'N', 7, 8, 9];
+    let newestRecord = [0, '02.05.2024', '12:00', 1, 55, 3, 4, 5, 'N', 7, 8, 9];
     return newestRecord;
   }
 
