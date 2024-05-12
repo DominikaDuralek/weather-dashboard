@@ -1,7 +1,6 @@
 import { Component, Input, ViewChild, ElementRef, AfterViewInit, ViewRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WeatherDataService } from '../weather-data.service';
-
 import { ChartComponent, NgApexchartsModule } from "ng-apexcharts";
 import ApexCharts from 'apexcharts';
 import { setEngine } from 'crypto';

@@ -85,7 +85,7 @@ export class DataChartComponent {
     this.updateChartData();
   }
 
-  updateChartData() {
+  public updateChartData() {
     let valuesArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2]);
     let xaxisArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[1]);
 

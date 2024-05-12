@@ -1,0 +1,10 @@
+.tables__table-container {
+    width: auto;
+    background-color: var(--color-slate800);
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 1rem;
+    border-radius: 6px;
+}
