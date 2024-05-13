@@ -5,7 +5,7 @@
 <hr>
 <main class="content__main">
     <div class="charts__chart-container"> 
-        <data-chart #dataChart class="charts__data-chart"></data-chart>
+        <data-chart #dataChart class="charts__data-chart" (chartDataUpdated)="handleChartDataUpdate($event)"></data-chart>
     </div>
     <section class="charts__tiles-grid">
         <!-- Current data tiles -->

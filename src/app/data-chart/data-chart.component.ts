@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, inject } from '@angular/core';
+import { Component, ViewChild, ElementRef, inject, Output, EventEmitter } from '@angular/core';
 import { WeatherDataService } from '../weather-data.service'
 import { ChartComponent, NgApexchartsModule } from "ng-apexcharts";
 import ApexCharts from 'apexcharts';
@@ -19,6 +19,8 @@ export class DataChartComponent {
   @ViewChild('dayPicker') dayPicker!: ElementRef;
   @ViewChild('weekPicker') weekPicker!: ElementRef;
   @ViewChild('apexChart') apexChart!: ChartComponent;
+
+  @Output() chartDataUpdated: EventEmitter<number[]> = new EventEmitter<number[]>();
 
   weatherDataService: WeatherDataService = inject(WeatherDataService);
 
@@ -98,6 +100,8 @@ export class DataChartComponent {
 
     // Manually trigger update/rendering of the chart
     this.apexChart.updateOptions(this.chartOptions);
+
+    this.chartDataUpdated.emit(valuesArray);
   }
 
 }
