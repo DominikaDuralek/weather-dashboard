@@ -33,6 +33,6 @@
 .content__main {
     display: flex;
     padding-top: 2rem;
-    gap: 4rem;
+    gap: 2rem;
     justify-content: center;
 }

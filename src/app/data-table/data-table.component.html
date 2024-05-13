@@ -1,9 +1,9 @@
 <div class="table__settings">
     <form>
-        <label for="date-from">From:</label>
+        <label #tableDataFromLabel for="date-from">From:</label>
         <input #tableDataFrom type="date" id="date-from" name="date-from" (change)="onSortDataFromChange()">
 
-        <label for="date-to">To:</label>
+        <label #tableDataToLabel for="date-to">To:</label>
         <input #tableDataTo type="date" id="date-to" name="date-to" (change)="onSortDataToChange()">
 
         <label for="table__sort">Sort by:</label>

@@ -7,4 +7,11 @@
     <div class="charts__chart-container"> 
         <data-chart #dataChart class="charts__data-chart"></data-chart>
     </div>
+    <section class="charts__tiles-grid">
+        <!-- Current data tiles -->
+        <tile #tileHighestValue [tileClass]="'tileHighestValue'"></tile>
+        <tile #tileLowestValue [tileClass]="'tileLowestValue'"></tile>
+        <tile #tileAverage [tileClass]="'tileAverage'"></tile>
+        <tile #tileMedian [tileClass]="'tileMedian'"></tile>
+    </section>
 </main>

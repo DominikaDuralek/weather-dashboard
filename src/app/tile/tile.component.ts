@@ -73,6 +73,26 @@ export class TileComponent implements AfterViewInit {
         this.tileText.nativeElement.innerHTML = 'PM 25'; 
         break; 
       }
+      case 'tileHighestValue': {
+        this.tileContent.nativeElement.innerHTML = 'Unknown';
+        this.tileText.nativeElement.innerHTML = 'Highest'; 
+        break; 
+      }
+      case 'tileLowestValue': {
+        this.tileContent.nativeElement.innerHTML = 'Unknown';
+        this.tileText.nativeElement.innerHTML = 'Lowest'; 
+        break; 
+      }
+      case 'tileAverage': {
+        this.tileContent.nativeElement.innerHTML = 'Unknown';
+        this.tileText.nativeElement.innerHTML = 'Average'; 
+        break; 
+      }
+      case 'tileMedian': {
+        this.tileContent.nativeElement.innerHTML = 'Unknown';
+        this.tileText.nativeElement.innerHTML = 'Median'; 
+        break; 
+      }
       default: {
         this.tileContent.nativeElement.innerHTML = 'Unknown';
         this.tileText.nativeElement.innerHTML = 'Unknown'; 

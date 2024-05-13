@@ -21,6 +21,8 @@ export class DataTableComponent {
   @ViewChild('table') table!: ElementRef;
   @ViewChild('tableDataFrom') tableDataFrom!: ElementRef;
   @ViewChild('tableDataTo') tableDataTo!: ElementRef;
+  @ViewChild('tableDataFromLabel') tableDataFromLabel!: ElementRef;
+  @ViewChild('tableDataToLabel') tableDataToLabel!: ElementRef;
   @ViewChild('tableSortValue') tableSortValue!: ElementRef;
   @ViewChild('tableSortButton') tableSortOrderButton!: MatButtonToggleGroup;
 

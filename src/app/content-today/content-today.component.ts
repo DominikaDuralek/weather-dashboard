@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { TileComponent } from '../tile/tile.component';
 import { DataTableComponent } from '../data-table/data-table.component';
 import { DataChartComponent } from '../data-chart/data-chart.component';
@@ -15,16 +15,29 @@ import { DataChartComponent } from '../data-chart/data-chart.component';
   styleUrl: './content-today.component.css'
 })
 export class ContentTodayComponent{
+  @ViewChild('todayTable') todayTable!: DataTableComponent;
+  @ViewChild('todayChart') todayChart!: DataChartComponent;
   currentDate!: string;
   currentTime!: string;
   private intervalId: any;
 
   ngOnInit() {
     this.updateDateTime();
+
     // Update every second
     this.intervalId = setInterval(() => {
       this.updateDateTime();
     }, 1000);
+  }
+
+  ngAfterViewInit() {
+    this.todayTable.tableDataFrom.nativeElement.setAttribute("style", "display: none;");
+    this.todayTable.tableDataFromLabel.nativeElement.setAttribute("style", "display: none;");
+    this.todayTable.tableDataTo.nativeElement.setAttribute("style", "display: none;");
+    this.todayTable.tableDataToLabel.nativeElement.setAttribute("style", "display: none;");
+
+    this.todayChart.chartType.nativeElement.setAttribute("style", "display: none;")
+    this.todayChart.dayPicker.nativeElement.setAttribute("style", "display: none;")
   }
 
   ngOnDestroy() {
