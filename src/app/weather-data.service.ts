@@ -8,7 +8,7 @@ export class WeatherDataService {
   // id, date, time, temp, hum, press, rain, wspeed, wdir, light, pm10, pm25
   constructor() { }
 
-  // Get newest record
+  // Get newest record TODO
   getNewestRecord() {
     let newestRecord = [0, '02.05.2024', '12:00', 1, 55, 3, 4, 5, 'N', 7, 8, 9];
     return newestRecord;
@@ -17,14 +17,12 @@ export class WeatherDataService {
   // Get all records
   getAllRecords() {
     let allRecords = generateData();
-    
     return allRecords;
   }
 
   // Sorted records for a table
   getRecordsTable(sortValue: number, sortOrder: string, dateFrom: string, dateTo: string) {
     let allRecords = this.getAllRecords();
-
     // Sort value and sort order - asc/desc
     allRecords.sort((a, b) => a[sortValue] - b[sortValue]);
     if(sortOrder == 'desc') {
@@ -62,13 +60,13 @@ export class WeatherDataService {
 
       // Calculate hourly averages
       const hourlyAverages = calculateHourlyAverages(extractedData);
-
       return hourlyAverages;
     }
   }
 
 }
 
+// Date to week of the year
 function getWeekNumber(dateString: string): string {
   const date = new Date(dateString);
   // Adjust the date to Thursday of the same week to make the calculation more accurate
@@ -83,12 +81,14 @@ function getWeekNumber(dateString: string): string {
 
 // Function to calculate hourly averages for each measurement
 function calculateHourlyAverages(data: Array<Array<any>>): Array<Array<any>> {
-  const hourlyAverages = new Map<string, { sum: number; count: number }>(); // Map to store hourly sum and count
+  // Map to store hourly sum and count
+  const hourlyAverages = new Map<string, { sum: number; count: number }>();
 
   // Iterate through each data row
   for (const row of data) {
       const [date, time, measurement] = row;
-      const hour = time.split(':')[0]; // Extract hour from time
+      // Extract hour from time
+      const hour = time.split(':')[0];
 
       // Key for the map is the hour (hour format = HH:00)
       const key = `${date} ${hour}:00`;

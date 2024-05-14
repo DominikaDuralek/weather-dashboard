@@ -1,9 +1,6 @@
 import { Component, ViewChild, ElementRef, inject, Output, EventEmitter } from '@angular/core';
 import { WeatherDataService } from '../weather-data.service'
 import { ChartComponent, NgApexchartsModule } from "ng-apexcharts";
-import ApexCharts from 'apexcharts';
-import { setEngine } from 'crypto';
-import { min } from 'rxjs';
 
 @Component({
   selector: 'data-chart',
@@ -35,7 +32,6 @@ export class DataChartComponent {
   
   constructor() {
     let initialValuesArray: number[] = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2]);
-    // console.log(determineChartMinMax(initialValuesArray));
     let initialMinMax: any[] = determineChartMinMax(initialValuesArray);
 
     this.chartOptions = {
@@ -57,8 +53,22 @@ export class DataChartComponent {
       yaxis: {
         min: initialMinMax[0],
         max: initialMinMax[1]
-        // forceNiceScale: false
-        // forceY: true
+      },
+      stroke: {
+        curve: 'straight',
+        width: 3,
+      },
+      tooltip: {
+        theme: 'dark',
+        style: {
+          fontSize: '12px'
+        },
+        custom: function({ series, seriesIndex, dataPointIndex, w }: { series: any[], seriesIndex: number, dataPointIndex: number, w: any }) {
+          const xValue = w.globals.categoryLabels[dataPointIndex];
+          const yValue = series[seriesIndex][dataPointIndex];
+          return `<div>Time: ${xValue}</div>
+                  <div>Value: ${yValue}</div>`;
+        }
       }
     };
   }

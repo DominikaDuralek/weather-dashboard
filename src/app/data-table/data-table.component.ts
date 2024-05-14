@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { WeatherDataService } from '../weather-data.service'
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonToggleChange, MatButtonToggleModule, MatButtonToggleGroup } from '@angular/material/button-toggle';

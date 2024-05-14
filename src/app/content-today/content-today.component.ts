@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TileComponent } from '../tile/tile.component';
 import { DataTableComponent } from '../data-table/data-table.component';
 import { DataChartComponent } from '../data-chart/data-chart.component';
@@ -23,7 +23,6 @@ export class ContentTodayComponent{
 
   ngOnInit() {
     this.updateDateTime();
-
     // Update every second
     this.intervalId = setInterval(() => {
       this.updateDateTime();

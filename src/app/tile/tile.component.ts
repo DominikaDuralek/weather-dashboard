@@ -1,9 +1,8 @@
-import { Component, Input, ViewChild, ElementRef, AfterViewInit, ViewRef, inject } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WeatherDataService } from '../weather-data.service';
-import { ChartComponent, NgApexchartsModule } from "ng-apexcharts";
+import { NgApexchartsModule } from "ng-apexcharts";
 import ApexCharts from 'apexcharts';
-import { setEngine } from 'crypto';
 
 @Component({
   selector: 'tile',
@@ -118,6 +117,7 @@ export class TileComponent implements AfterViewInit {
     }
   }
 
+  // Chart for the humidity tile
   renderPieChart() {
     const chartOptions = {
       series: [+this.weatherDataService.getNewestRecord()[4], (100 - (+this.weatherDataService.getNewestRecord()[4]))],

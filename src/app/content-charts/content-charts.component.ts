@@ -1,7 +1,7 @@
 import { Component, ViewChild} from '@angular/core';
 import { TileComponent } from '../tile/tile.component';
 import { DataChartComponent } from '../data-chart/data-chart.component';
-import { ChartComponent, NgApexchartsModule } from "ng-apexcharts";
+import { NgApexchartsModule } from "ng-apexcharts";
 
 @Component({
   selector: 'content-charts',
@@ -51,7 +51,6 @@ export class ContentChartsComponent {
   ngAfterViewInit() {
     this.dataChart.chartOptions.chart.width = 850;
     this.dataChart.chartOptions.chart.height = 425;
-    // this.dataChart.chartOptions.yaxis.min = 0;
   
     // Create a copy of the chart data before sorting
     this.currentChartData = [...this.dataChart.chartOptions.series[0].data];
