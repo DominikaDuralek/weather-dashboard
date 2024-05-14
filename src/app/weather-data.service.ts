@@ -136,7 +136,7 @@ function generateData(): Array<Array<any>> {
           id++,
           formattedDate,
           formattedTime,
-          ...measurements.map(value => typeof value === 'number' ? Math.floor(Math.random() * 21) : value)
+          ...measurements.map(value => typeof value === 'number' ? Math.floor(Math.random() * (20-(10)+1) + (10)) : value) // Math.floor(Math.random() * (max-min+1) + min)
         ];
         data.push(row);
       }

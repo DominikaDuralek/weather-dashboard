@@ -51,6 +51,7 @@ export class ContentChartsComponent {
   ngAfterViewInit() {
     this.dataChart.chartOptions.chart.width = 850;
     this.dataChart.chartOptions.chart.height = 425;
+    // this.dataChart.chartOptions.yaxis.min = 0;
   
     // Create a copy of the chart data before sorting
     this.currentChartData = [...this.dataChart.chartOptions.series[0].data];
@@ -67,8 +68,8 @@ export class ContentChartsComponent {
     this.tileMedian.tileContent.nativeElement.innerHTML = this.calculateMedian(this.currentChartData);
   }
 
-  calculateAverage(data: number[]): number {
-    return data.reduce((sum, value) => sum + value, 0) / data.length;
+  calculateAverage(data: number[]): string {
+    return (data.reduce((sum, value) => sum + value, 0) / data.length).toFixed(1);
   }
 
   calculateMedian(data: number[]): number {

@@ -1,4 +1,8 @@
 <div #tileContent class="tile__content">
+    <div #tileContentContainer class="tile__content__container">
+        <div #tileContentIcon class="tile__content__icon"></div>
+        <div #tileContentValue class="tile__content__value"></div>
+    </div>
     <div id="pieChart" #pieChart *ngIf="tileClass === 'tileHumidity'"></div>
 </div>
 <p #tileText class="tile__text">

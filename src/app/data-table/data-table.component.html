@@ -17,7 +17,7 @@
             <option value=7>Wind Speed</option>
             <option value=9>Light</option>
             <option value=10>Pm 10</option>
-            <option value=11>Pm 25</option>
+            <option value=11>Pm 2.5</option>
         </select>
 
         <mat-button-toggle-group #tableSortOrderButton="matButtonToggleGroup" (change)="onSortOrderChange($event)">
@@ -44,27 +44,27 @@
 
     <ng-container matColumnDef="temperature">
         <mat-header-cell *matHeaderCellDef> Temperature </mat-header-cell>
-        <mat-cell *matCellDef="let weatherData"> {{weatherData[3]}} </mat-cell>
+        <mat-cell *matCellDef="let weatherData"> {{weatherData[3]}}°C </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="humidity">
         <mat-header-cell *matHeaderCellDef> Humidity </mat-header-cell>
-        <mat-cell *matCellDef="let weatherData"> {{weatherData[4]}} </mat-cell>
+        <mat-cell *matCellDef="let weatherData"> {{weatherData[4]}}% </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="pressure">
         <mat-header-cell *matHeaderCellDef> Pressure </mat-header-cell>
-        <mat-cell *matCellDef="let weatherData"> {{weatherData[5]}} </mat-cell>
+        <mat-cell *matCellDef="let weatherData"> {{weatherData[5]}} hPa </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="rain">
         <mat-header-cell *matHeaderCellDef> Rain </mat-header-cell>
-        <mat-cell *matCellDef="let weatherData"> {{weatherData[6]}} </mat-cell>
+        <mat-cell *matCellDef="let weatherData"> {{weatherData[6]}} mm </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="windspeed">
         <mat-header-cell *matHeaderCellDef> Wind Speed </mat-header-cell>
-        <mat-cell *matCellDef="let weatherData"> {{weatherData[7]}} </mat-cell>
+        <mat-cell *matCellDef="let weatherData"> {{weatherData[7]}} m/s </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="winddirection">
@@ -74,17 +74,17 @@
 
     <ng-container matColumnDef="light">
         <mat-header-cell *matHeaderCellDef> Light </mat-header-cell>
-        <mat-cell *matCellDef="let weatherData"> {{weatherData[9]}} </mat-cell>
+        <mat-cell *matCellDef="let weatherData"> {{weatherData[9]}} lx </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="pm10">
         <mat-header-cell *matHeaderCellDef> Pm 10 </mat-header-cell>
-        <mat-cell *matCellDef="let weatherData"> {{weatherData[10]}} </mat-cell>
+        <mat-cell *matCellDef="let weatherData"> {{weatherData[10]}} μm </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="pm25">
-        <mat-header-cell *matHeaderCellDef> Pm 25 </mat-header-cell>
-        <mat-cell *matCellDef="let weatherData"> {{weatherData[11]}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef> Pm 2.5 </mat-header-cell>
+        <mat-cell *matCellDef="let weatherData"> {{weatherData[11]}} μm </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

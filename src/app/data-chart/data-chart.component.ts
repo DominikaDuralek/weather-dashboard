@@ -3,6 +3,7 @@ import { WeatherDataService } from '../weather-data.service'
 import { ChartComponent, NgApexchartsModule } from "ng-apexcharts";
 import ApexCharts from 'apexcharts';
 import { setEngine } from 'crypto';
+import { min } from 'rxjs';
 
 @Component({
   selector: 'data-chart',
@@ -33,6 +34,10 @@ export class DataChartComponent {
   selectedWeek: string = getWeekNumber(this.selectedDay);
   
   constructor() {
+    let initialValuesArray: number[] = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2]);
+    // console.log(determineChartMinMax(initialValuesArray));
+    let initialMinMax: any[] = determineChartMinMax(initialValuesArray);
+
     this.chartOptions = {
       chart: {
         width: 500,
@@ -42,12 +47,19 @@ export class DataChartComponent {
       series: [
         {
           name: 'Values',
-          data: this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2])
-        }
+          data: this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2]),
+        },
       ],
       xaxis: {
         categories: this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[1]),
+        min: 0
       },
+      yaxis: {
+        min: initialMinMax[0],
+        max: initialMinMax[1]
+        // forceNiceScale: false
+        // forceY: true
+      }
     };
   }
 
@@ -94,7 +106,9 @@ export class DataChartComponent {
     // Update chartOptions with the new data
     this.chartOptions = {
       ...this.chartOptions,
-      series: [{ data: valuesArray }],
+      series: [
+        { data: valuesArray }
+      ],
       xaxis: { categories: xaxisArray }
     };
 
@@ -104,6 +118,27 @@ export class DataChartComponent {
     this.chartDataUpdated.emit(valuesArray);
   }
 
+}
+
+function determineChartMinMax(data: number[]): any[] {
+  let minMax: any[] = [];
+  const dataMin: number = Math.min(...data);
+  const dataMax: number = Math.max(...data);
+  let chartMin: number | undefined;
+  let chartMax: number | undefined;
+
+  if(dataMin < 0 && dataMax > 0) {
+    chartMin = undefined;
+    chartMax = undefined;
+  } else if(dataMin > 0){
+    chartMin = 0;
+  } else if(dataMax < 0) {
+    chartMax = 0;
+  }
+
+  minMax.push(chartMin);
+  minMax.push(chartMax);
+  return minMax;
 }
 
 function getWeekNumber(dateString: string): string {

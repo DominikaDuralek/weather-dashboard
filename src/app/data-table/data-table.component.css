@@ -11,12 +11,25 @@
 mat-table {
     background-color: var(--color-slate700);
     max-height: 500px;
+    table-layout: auto;
+    white-space: nowrap;
+    border-collapse: collapse;
 }
 
 mat-header-cell {
     color: var(--color-slate200);
+    font-size: var(--size-s);
+    display: table-cell;
+    display: flex;
+    align-items: center;
+    min-width: 100px;
 }
 
 mat-cell {
     color: var(--color-slate200);
+    font-size: var(--size-s);
+    display: table-cell;
+    display: flex;
+    align-items: center;
+    min-width: 100px;
 }
