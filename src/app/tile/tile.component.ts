@@ -137,7 +137,7 @@ export class TileComponent implements AfterViewInit {
           }
         },
         style: {
-          fontSize: '16px',
+          fontSize: '16px'
         }
       },
       legend: {
@@ -151,13 +151,26 @@ export class TileComponent implements AfterViewInit {
         pie: {
           dataLabels: {
             offset: -30,
-          }
+          },
+          expandOnClick: false
         }
       },
       stroke: {
         // Outline
         colors: ['#e2e8f0'],
-        width: 1,
+        width: 1
+      },
+      states: {
+        active: {
+          filter: {
+            type: 'none' /* none, lighten, darken */
+          }
+        },
+        hover: {
+          filter: {
+              type: 'none'
+          }
+      },
       }
     };
     const chart = new ApexCharts(this.pieChart.nativeElement, chartOptions);

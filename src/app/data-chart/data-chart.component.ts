@@ -36,8 +36,8 @@ export class DataChartComponent {
 
     this.chartOptions = {
       chart: {
-        width: 500,
-        height: 250,
+        // width: 500,
+        // height: 250,
         type: 'line',
       },
       series: [

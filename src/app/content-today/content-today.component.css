@@ -7,28 +7,30 @@
     display: grid;
     grid-template-rows: repeat(3, 12rem);
     grid-template-columns: repeat(3, 12rem);
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     justify-items: center;
     align-items: center;
+
+    background-color: var(--color-slate800);
+    border-radius: 6px;
 }
 
-.today__header__line {
-    border: 1px solid var(--color-slate200);
-    height: 1rem;
+.today__header__dot {
+    font-size: var(--size-3xl);
 }
 
 .today__data {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
 }
 
 .today__chart-container,
 .today__table-container {
-    width: 36rem;
-    height: 16.5rem;
+    width: 50rem;
+    height: 17rem;
     background-color: var(--color-slate800);
     display: flex;
     overflow-x: auto;

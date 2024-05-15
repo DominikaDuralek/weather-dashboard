@@ -8,9 +8,9 @@
     font-size: var(--size-l);
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     border-radius: 6px;
-    padding-bottom: 2rem;
+    /* padding-bottom: 1rem; */
 }
 
 .tile__content {
@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .tile__content__container {
@@ -29,19 +29,22 @@
 }
 
 .tile__content__icon {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+.tile__content__value {
+    font-size: var(--size-xl);
 }
 
 .tile__text {
-    font-size: var(--size-base);
+    font-size: var(--size-l);
+    /* margin-top: -3.25rem; */
 }
 
 #pieChart {
     width: 150px;
     height: 150px;
-    display: flex;
-    align-items: center;
-    margin-bottom: -5rem;
-    padding-bottom: 3rem;
+    margin-bottom: -3.25rem;
+    margin-top: -3.25rem;
 }

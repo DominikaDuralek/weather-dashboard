@@ -3,3 +3,8 @@
     width: 100vw;
     display: flex;
 }
+
+.container-content {
+    width: 100%;
+    height: 100%;
+}

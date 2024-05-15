@@ -49,8 +49,8 @@ export class ContentChartsComponent {
   }
 
   ngAfterViewInit() {
-    this.dataChart.chartOptions.chart.width = 850;
-    this.dataChart.chartOptions.chart.height = 425;
+    // this.dataChart.chartOptions.chart.width = 850;
+    // this.dataChart.chartOptions.chart.height = 425;
   
     // Create a copy of the chart data before sorting
     this.currentChartData = [...this.dataChart.chartOptions.series[0].data];

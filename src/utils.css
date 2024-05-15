@@ -23,6 +23,8 @@
     align-items: center;
     gap: 2rem;
     padding-left: 2rem;
+    
+    justify-content: baseline;
 }
 
 .content__header__text {
@@ -34,5 +36,9 @@
     display: flex;
     padding-top: 2rem;
     gap: 2rem;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: flex-start;
+
+    padding-left: 2rem;
+    /* padding-right: 2rem; */
 }

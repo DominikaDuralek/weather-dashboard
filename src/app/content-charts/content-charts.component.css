@@ -1,5 +1,5 @@
 .charts__chart-container {
-    width: 54rem;
+    width: 60rem;
     height: 36rem;
     background-color: var(--color-slate800);
     display: flex;
@@ -15,7 +15,9 @@
     display: grid;
     grid-template-rows: 12rem 12rem;
     grid-template-columns: 12rem 12rem;
-    border: 1px solid grey;
     justify-items: center;
     align-content: center;
+
+    background-color: var(--color-slate800);
+    border-radius: 6px;
 }
