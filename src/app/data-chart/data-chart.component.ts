@@ -36,9 +36,10 @@ export class DataChartComponent {
 
     this.chartOptions = {
       chart: {
-        // width: 500,
-        // height: 250,
         type: 'line',
+        // Set the width and height as 100% of the container
+        width: '100%',
+        height: '100%'
       },
       series: [
         {

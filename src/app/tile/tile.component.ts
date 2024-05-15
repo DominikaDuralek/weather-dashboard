@@ -90,22 +90,26 @@ export class TileComponent implements AfterViewInit {
         break; 
       }
       case 'tileHighestValue': {
-        this.tileContent.nativeElement.innerHTML = 'Unknown';
+        // this.tileContent.nativeElement.innerHTML = 'Unknown';
+        this.tileContentIcon.nativeElement.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 4V20M12 4L18 10M12 4L6 10" stroke="#93c5fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>';
         this.tileText.nativeElement.innerHTML = 'Highest'; 
         break; 
       }
       case 'tileLowestValue': {
-        this.tileContent.nativeElement.innerHTML = 'Unknown';
+        // this.tileContent.nativeElement.innerHTML = 'Unknown';
+        this.tileContentIcon.nativeElement.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 20L12 4M12 20L6 14M12 20L18 14" stroke="#93c5fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>';
         this.tileText.nativeElement.innerHTML = 'Lowest'; 
         break; 
       }
       case 'tileAverage': {
-        this.tileContent.nativeElement.innerHTML = 'Unknown';
+        // this.tileContent.nativeElement.innerHTML = 'Unknown';
+        this.tileContentIcon.nativeElement.innerHTML = '<svg fill="#93c5fd" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style> .cls-1 { fill: none; } </style> </defs> <path d="M23,24c-3.5991,0-5.0293-4.1758-6.4126-8.2139C15.2764,11.9583,13.92,8,11,8a3.44,3.44,0,0,0-3.0532,2.3215L6.0513,9.6838C6.1016,9.5334,7.3218,6,11,6c4.3491,0,6.0122,4.8547,7.48,9.1379C19.6885,18.6667,20.83,22,23,22a3.44,3.44,0,0,0,3.0532-2.3215l1.8955.6377C27.8984,20.4666,26.6782,24,23,24Z"></path> <path d="M4,28V17H6V15H4V2H2V28a2,2,0,0,0,2,2H30V28Z"></path> <rect x="8" y="15" width="2" height="2"></rect> <rect x="12" y="15" width="2" height="2"></rect> <rect x="20" y="15" width="2" height="2"></rect> <rect x="24" y="15" width="2" height="2"></rect> <rect x="28" y="15" width="2" height="2"></rect> <rect id="_Transparent_Rectangle_" data-name="<Transparent Rectangle>" class="cls-1" width="32" height="32"></rect> </g></svg>';
         this.tileText.nativeElement.innerHTML = 'Average'; 
         break; 
       }
       case 'tileMedian': {
-        this.tileContent.nativeElement.innerHTML = 'Unknown';
+        // this.tileContent.nativeElement.innerHTML = 'Unknown';
+        this.tileContentIcon.nativeElement.innerHTML = '<svg fill="#93c5fd" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style> .cls-1 { fill: none; } </style> </defs> <rect x="16" y="22" width="2" height="2" transform="translate(-6 40) rotate(-90)"></rect> <path d="M18,28V26H16v2H4V2H2V28a2,2,0,0,0,2,2H30V28Z"></path> <path d="M26.0532,19.6787A3.44,3.44,0,0,1,23,22c-2.17,0-3.3115-3.333-4.52-6.8623-.3557-1.0386-.7239-2.1094-1.1382-3.1377H18V10H16.4221C15.2124,7.7148,13.5811,6,11,6,7.3218,6,6.1016,9.5332,6.0513,9.6836l1.8955.6377A3.44,3.44,0,0,1,11,8c2.92,0,4.2764,3.958,5.5874,7.7861.2544.7422.5105,1.4893.7813,2.2139H16v2h2.2019c1.0828,2.2886,2.4959,4,4.7981,4,3.6782,0,4.8984-3.5332,4.9487-3.6836Z"></path> <rect x="16" y="6" width="2" height="2" transform="translate(10 24) rotate(-90)"></rect> <rect x="16" y="2" width="2" height="2" transform="translate(14 20) rotate(-90)"></rect> <rect id="_Transparent_Rectangle_" data-name="<Transparent Rectangle>" class="cls-1" width="32" height="32"></rect> </g></svg>';
         this.tileText.nativeElement.innerHTML = 'Median'; 
         break; 
       }

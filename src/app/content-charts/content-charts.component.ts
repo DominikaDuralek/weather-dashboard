@@ -61,10 +61,10 @@ export class ContentChartsComponent {
 
   updateTiles() {
     // Update tile content with the new chart data
-    this.tileHighestValue.tileContent.nativeElement.innerHTML = Math.max(...this.currentChartData);
-    this.tileLowestValue.tileContent.nativeElement.innerHTML = Math.min(...this.currentChartData);
-    this.tileAverage.tileContent.nativeElement.innerHTML = this.calculateAverage(this.currentChartData);
-    this.tileMedian.tileContent.nativeElement.innerHTML = this.calculateMedian(this.currentChartData);
+    this.tileHighestValue.tileContentValue.nativeElement.innerHTML = Math.max(...this.currentChartData);
+    this.tileLowestValue.tileContentValue.nativeElement.innerHTML = Math.min(...this.currentChartData);
+    this.tileAverage.tileContentValue.nativeElement.innerHTML = this.calculateAverage(this.currentChartData);
+    this.tileMedian.tileContentValue.nativeElement.innerHTML = this.calculateMedian(this.currentChartData);
   }
 
   calculateAverage(data: number[]): string {
