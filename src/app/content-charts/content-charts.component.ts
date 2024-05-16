@@ -31,21 +31,11 @@ export class ContentChartsComponent {
   constructor() {}
 
   handleChartDataUpdate(chartData: number[]) {
-    const highestValue = Math.max(...chartData);
-    const lowestValue = Math.min(...chartData);
-    const averageValue = chartData.reduce((acc, val) => acc + val, 0) / chartData.length;
-
-    const sortedData = [...chartData].sort((a, b) => a - b);
-    const middleIndex = Math.floor(sortedData.length / 2);
-    const medianValue = sortedData.length % 2 === 0 ?
-                        (sortedData[middleIndex - 1] + sortedData[middleIndex]) / 2 :
-                        sortedData[middleIndex];
-
-    // Update tile components with calculated values
-    this.tileHighestValue.tileContent.nativeElement.innerHTML = highestValue.toString();
-    this.tileLowestValue.tileContent.nativeElement.innerHTML = lowestValue.toString();
-    this.tileAverage.tileContent.nativeElement.innerHTML = averageValue.toString();
-    this.tileMedian.tileContent.nativeElement.innerHTML = medianValue.toString();
+    this.currentChartData = chartData;
+    this.tileHighestValue.tileContentValue.nativeElement.innerHTML = Math.max(...this.currentChartData).toFixed(1);
+    this.tileLowestValue.tileContentValue.nativeElement.innerHTML = Math.min(...this.currentChartData).toFixed(1);
+    this.tileAverage.tileContentValue.nativeElement.innerHTML = this.calculateAverage(this.currentChartData).toFixed(1);
+    this.tileMedian.tileContentValue.nativeElement.innerHTML = this.calculateMedian(this.currentChartData).toFixed(1);
   }
 
   ngAfterViewInit() {
@@ -61,14 +51,14 @@ export class ContentChartsComponent {
 
   updateTiles() {
     // Update tile content with the new chart data
-    this.tileHighestValue.tileContentValue.nativeElement.innerHTML = Math.max(...this.currentChartData);
-    this.tileLowestValue.tileContentValue.nativeElement.innerHTML = Math.min(...this.currentChartData);
-    this.tileAverage.tileContentValue.nativeElement.innerHTML = this.calculateAverage(this.currentChartData);
-    this.tileMedian.tileContentValue.nativeElement.innerHTML = this.calculateMedian(this.currentChartData);
+    this.tileHighestValue.tileContentValue.nativeElement.innerHTML = Math.max(...this.currentChartData).toFixed(1);
+    this.tileLowestValue.tileContentValue.nativeElement.innerHTML = Math.min(...this.currentChartData).toFixed(1);
+    this.tileAverage.tileContentValue.nativeElement.innerHTML = this.calculateAverage(this.currentChartData).toFixed(1);
+    this.tileMedian.tileContentValue.nativeElement.innerHTML = this.calculateMedian(this.currentChartData).toFixed(1);
   }
 
-  calculateAverage(data: number[]): string {
-    return (data.reduce((sum, value) => sum + value, 0) / data.length).toFixed(1);
+  calculateAverage(data: number[]): number {
+    return data.reduce((sum, value) => sum + value, 0) / data.length;
   }
 
   calculateMedian(data: number[]): number {

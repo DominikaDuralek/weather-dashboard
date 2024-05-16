@@ -38,6 +38,9 @@
     --color-slate800: #f1f5f9;
     --color-slate200: #0f172a;
     --color-slate100: #1e293b;
+
+    --color-accent900: #1d4ed8;
+    --color-accent800: #1d4ed8;
 }
 
 * {
@@ -75,5 +78,22 @@ h1, h2, h3, h4, h5, h6 {
     font-style: normal;
     font-size: var(--size-base);
 }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    background-image: url('assets/select-arrow.svg');
+    background-size: 0.6em 0.6em; 
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+
+    min-width: 8rem;
+    border: none !important;
+    outline: none !important;
+}
+

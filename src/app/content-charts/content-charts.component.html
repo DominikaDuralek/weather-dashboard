@@ -3,14 +3,16 @@
     <h1 class="content__header__text">Charts</h1>
 </header>
 <main class="content__main">
-    <div class="charts__chart-container"> 
-        <data-chart #dataChart class="charts__data-chart" (chartDataUpdated)="handleChartDataUpdate($event)"></data-chart>
+    <div class="charts__content">
+        <div class="charts__chart-container"> 
+            <data-chart #dataChart class="charts__data-chart" (chartDataUpdated)="handleChartDataUpdate($event)"></data-chart>
+        </div>
+        <section class="charts__tiles-grid">
+            <!-- Current data tiles -->
+            <tile #tileHighestValue [tileClass]="'tileHighestValue'" class="charts__tile"></tile>
+            <tile #tileLowestValue [tileClass]="'tileLowestValue'" class="charts__tile"></tile>
+            <tile #tileAverage [tileClass]="'tileAverage'" class="charts__tile"></tile>
+            <tile #tileMedian [tileClass]="'tileMedian'" class="charts__tile"></tile>
+        </section>
     </div>
-    <section class="charts__tiles-grid">
-        <!-- Current data tiles -->
-        <tile #tileHighestValue [tileClass]="'tileHighestValue'"></tile>
-        <tile #tileLowestValue [tileClass]="'tileLowestValue'"></tile>
-        <tile #tileAverage [tileClass]="'tileAverage'"></tile>
-        <tile #tileMedian [tileClass]="'tileMedian'"></tile>
-    </section>
 </main>

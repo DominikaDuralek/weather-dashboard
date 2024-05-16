@@ -33,12 +33,27 @@
 }
 
 .content__main {
+    width: 100vw;
     display: flex;
     padding-top: 2rem;
     gap: 2rem;
+    
     /* justify-content: center; */
     justify-content: flex-start;
 
     padding-left: 2rem;
     /* padding-right: 2rem; */
+}
+
+.settings-item {
+    background-color: var(--color-accent800);
+    color: var(--color-accent300);
+    font-size: var(--size-s);
+
+    padding: 0.6em;
+    padding-left: 1em;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    text-align: left;
 }

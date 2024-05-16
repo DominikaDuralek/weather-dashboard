@@ -1,6 +1,6 @@
 <!-- <label for="chart__value">Values:</label> -->
 <div class="chart__settings">
-  <select #chartValue name="chart__value" id="chart__value" (change)="onSelectedValueChanged()">
+  <select #chartValue name="chart__value" class="settings-item chart__value" (change)="onSelectedValueChanged()">
       <option value=3>Temperature</option>
       <option value=4>Humidity</option>
       <option value=5>Pressure</option>
@@ -8,16 +8,16 @@
       <option value=7>Wind Speed</option>
       <option value=9>Light</option>
       <option value=10>Pm 10</option>
-      <option value=11>Pm 25</option>
+      <option value=11>Pm 2.5</option>
   </select>
 
-  <select #chartType name="chart__type" id="chart__type" (change)="onSelectedTypeChanged()">
+  <select #chartType name="chart__type" class="settings-item chart__type" (change)="onSelectedTypeChanged()">
     <option value="Day">Day</option>
     <option value="Week">Week</option>
   </select>
 
-  <input #dayPicker type="date" class="dayPicker" name="dayPicker" (change)="onSelectedDayChanged()">
-  <input #weekPicker type="week" class="weekPicker" name="weekPicker" (change)="onSelectedWeekChanged()">
+  <input #dayPicker type="date" class="settings-item dayPicker" name="dayPicker" (change)="onSelectedDayChanged()">
+  <input #weekPicker type="week" class="settings-item weekPicker" name="weekPicker" (change)="onSelectedWeekChanged()">
 </div>
 
 <div class="chart-container">

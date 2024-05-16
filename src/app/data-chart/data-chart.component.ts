@@ -34,6 +34,8 @@ export class DataChartComponent {
     let initialValuesArray: number[] = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2]);
     let initialMinMax: any[] = determineChartMinMax(initialValuesArray);
 
+    let initialXaxisArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[1]);
+
     this.chartOptions = {
       chart: {
         type: 'line',
@@ -48,12 +50,29 @@ export class DataChartComponent {
         },
       ],
       xaxis: {
-        categories: this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[1]),
-        min: 0
+        categories: initialXaxisArray,
+        labels: {
+          style: {
+            colors: '#93c5fd',
+          },
+          rotateAlways: true,
+          formatter: function (value: string, timestamp: any, index: any) {
+            // Show label if it contains the specified string
+            return filterLabelsContaining(initialXaxisArray, ":00").includes(value) ? value : '';
+          }
+        },
+        tooltip: {
+          enabled: false,
+        },
       },
       yaxis: {
         min: initialMinMax[0],
-        max: initialMinMax[1]
+        max: initialMinMax[1],
+        labels: {
+          style: {
+            colors: '#93c5fd'
+          }
+        }
       },
       stroke: {
         curve: 'straight',
@@ -113,22 +132,101 @@ export class DataChartComponent {
   public updateChartData() {
     let valuesArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2]);
     let xaxisArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[1]);
+    let datesArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[0]);
 
-    // Update chartOptions with the new data
-    this.chartOptions = {
+    let dateTimeArray: string[] = [];
+
+    for(let i = 0; i < datesArray.length; i++) {
+      dateTimeArray.push(datesArray[i] + ' ' + xaxisArray[i]);
+    }
+
+    // Update chartOptions with the new data  
+    if(this.selectedType == 'Day'){
+      // Chart type = Day 
+      this.chartOptions = {
+        ...this.chartOptions,
+        series: [
+          { data: valuesArray }
+        ],
+        xaxis: {
+          categories: xaxisArray,
+          labels: {
+            style: {
+              colors: '#93c5fd',
+            },
+            rotateAlways: true,
+            formatter: function (value: string, timestamp: any, index: any) {
+              // Show label if it contains the specified string
+              return filterLabelsContaining(xaxisArray, ":00").includes(value) ? value : '';
+            }
+          },
+          tooltip: {
+            enabled: false,
+          },
+        },
+        tooltip: {
+          theme: 'dark',
+          style: {
+            fontSize: '12px'
+          },
+          custom: function({dataPointIndex}: {dataPointIndex: number}) {
+            return `<div>Time: ${xaxisArray[dataPointIndex]}</div>
+            <div>Value: ${valuesArray[dataPointIndex]}</div>`;
+          }
+        }
+      };
+    } else {
+      // Chart type = Week
+      this.chartOptions = {
       ...this.chartOptions,
       series: [
         { data: valuesArray }
       ],
-      xaxis: { categories: xaxisArray }
+      xaxis: {
+        categories: dateTimeArray,
+        labels: {
+          style: {
+            colors: '#93c5fd',
+          },
+          rotate: 0,
+          // rotateAlways: false,
+          formatter: function (value: string, timestamp: any, index: any) {
+            // Show label if it contains the specified string
+            return filterLabelsContaining(dateTimeArray, "00:00").includes(value) ? value.substring(0, 11) : '';
+          }
+        },
+        tooltip: {
+          enabled: false,
+        },
+      },
+      tooltip: {
+        theme: 'dark',
+        style: {
+          fontSize: '12px'
+        },
+        custom: function({dataPointIndex}: {dataPointIndex: number}) {
+          return `<div>Day: ${datesArray[dataPointIndex] + ' ' + xaxisArray[dataPointIndex]}</div>
+          <div>Value: ${valuesArray[dataPointIndex]}</div>`;
+        }
+      }
     };
+    }
 
     // Manually trigger update/rendering of the chart
     this.apexChart.updateOptions(this.chartOptions);
-
     this.chartDataUpdated.emit(valuesArray);
   }
 
+}
+
+// Function to filter labels containing a certain string
+function filterLabelsContaining(categories: string[], searchString: string) {
+  return categories.filter(label => label.includes(searchString));
+}
+
+// Function to filter out duplicates
+function removeDuplicates(categories: string[]) {
+  return categories.filter((value, index, self) => self.indexOf(value) === index);
 }
 
 function determineChartMinMax(data: number[]): any[] {
