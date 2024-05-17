@@ -32,6 +32,10 @@
     font-weight: 500;
 }
 
+.content__header__dot {
+    font-size: var(--size-3xl);
+}
+
 .content__main {
     width: 100vw;
     display: flex;
@@ -57,3 +61,5 @@
     outline: none;
     text-align: left;
 }
+
+

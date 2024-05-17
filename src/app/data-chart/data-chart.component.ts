@@ -41,7 +41,12 @@ export class DataChartComponent {
         type: 'line',
         // Set the width and height as 100% of the container
         width: '100%',
-        height: '100%'
+        height: '100%',
+        animations: {
+          enabled: true,
+          easing: 'easeinout',
+          speed: 500,
+      }
       },
       series: [
         {
@@ -71,8 +76,11 @@ export class DataChartComponent {
         labels: {
           style: {
             colors: '#93c5fd'
+          },
+          formatter: function (val: number) {
+            return val.toFixed(1);
           }
-        }
+        },
       },
       stroke: {
         curve: 'straight',
@@ -89,7 +97,7 @@ export class DataChartComponent {
           return `<div>Time: ${xValue}</div>
                   <div>Value: ${yValue}</div>`;
         }
-      }
+      },
     };
   }
 
@@ -131,11 +139,13 @@ export class DataChartComponent {
 
   public updateChartData() {
     let valuesArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2]);
+
+    this.chartDataUpdated.emit(valuesArray);
+
     let xaxisArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[1]);
     let datesArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[0]);
 
     let dateTimeArray: string[] = [];
-
     for(let i = 0; i < datesArray.length; i++) {
       dateTimeArray.push(datesArray[i] + ' ' + xaxisArray[i]);
     }
@@ -214,7 +224,6 @@ export class DataChartComponent {
 
     // Manually trigger update/rendering of the chart
     this.apexChart.updateOptions(this.chartOptions);
-    this.chartDataUpdated.emit(valuesArray);
   }
 
 }
@@ -222,11 +231,6 @@ export class DataChartComponent {
 // Function to filter labels containing a certain string
 function filterLabelsContaining(categories: string[], searchString: string) {
   return categories.filter(label => label.includes(searchString));
-}
-
-// Function to filter out duplicates
-function removeDuplicates(categories: string[]) {
-  return categories.filter((value, index, self) => self.indexOf(value) === index);
 }
 
 function determineChartMinMax(data: number[]): any[] {

@@ -2,7 +2,7 @@
     /* background-color: var(--color-slate700); */
     color: var(--color-slate200);
 
-    display:block;
+    display: block;
 }
 
 .table__settings {
@@ -13,9 +13,9 @@
 }
 
 .table__container {
-    display: flex;
-    height:100%;
-    width:100%;
+    /* display: flex; */
+    height: 100%;
+    width: 100%;
 }
 
 mat-button-toggle-group {
@@ -24,40 +24,84 @@ mat-button-toggle-group {
 }
 
 mat-button-toggle {
-    width: 5rem;
+    width: 4rem;
     height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0.6em;
 
-    background-color: var(--color-accent500);
-    color: var(--color-accent200);
+    background-color: var(--color-accent800);
+    color: var(--color-accent300);
 
     font-size: var(--size-xs);
 }
 
+/* Custom styles for mat-button-toggle when selected */
+.mat-button-toggle.mat-button-toggle-checked {
+    background-color: var(--color-accent500);
+    color: var(--color-accent200);
+}
+
+/* Custom hover styles for mat-button-toggle */
+.mat-button-toggle:hover {
+    background-color: var(--color-accent400);
+}
+
 mat-table {
-    /* background-color: var(--color-slate700); */
     background: none;
     max-height: 500px;
-    table-layout: auto;
     white-space: nowrap;
     border-collapse: collapse;
+
+    margin-top: 1.25rem;
 }
 
 mat-header-cell {
     color: var(--color-slate200);
     font-size: var(--size-s);
-    display: table-cell;
-    display: flex;
-    align-items: center;
-    min-width: 110px;
+    font-weight: bold;
+
+    border-right: dashed var(--color-slate700) 1px;
 }
 
 mat-cell {
     color: var(--color-slate200);
     font-size: var(--size-s);
-    display: table-cell;
-    display: flex;
+
+    border-right: dashed var(--color-slate700) 1px;
 }
+
+mat-row {
+    border-top: 1px var(--color-slate700) solid;
+}
+
+.mat-column-date {
+    min-width: 7rem;
+}
+
+.mat-column-pressure {
+    min-width: 7rem;
+}
+
+.mat-column-rain {
+    min-width: 7rem;
+}
+
+.mat-column-windspeed {
+    min-width: 7rem;
+}
+
+.mat-column-light {
+    min-width: 7rem;
+}
+
+.mat-column-pm10 {
+    min-width: 5rem;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    /* border-color: currentColor; */
+    background-color: var(--color-accent900);
+  }

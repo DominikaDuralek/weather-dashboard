@@ -16,10 +16,10 @@
     <option value="Week">Week</option>
   </select>
 
-  <input #dayPicker type="date" class="settings-item dayPicker" name="dayPicker" (change)="onSelectedDayChanged()">
-  <input #weekPicker type="week" class="settings-item weekPicker" name="weekPicker" (change)="onSelectedWeekChanged()">
+  <input #dayPicker type="date" class="settings-item dayPicker custom-date-picker" name="dayPicker" (change)="onSelectedDayChanged()">
+  <input #weekPicker type="week" class="settings-item weekPicker custom-date-picker" name="weekPicker" (change)="onSelectedWeekChanged()">
 </div>
 
 <div class="chart-container">
-    <apx-chart #apexChart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis" [yaxis]="chartOptions.yaxis" [stroke]="chartOptions.stroke" [tooltip]="chartOptions.tooltip"></apx-chart>
+    <apx-chart #apexChart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis" [yaxis]="chartOptions.yaxis" [stroke]="chartOptions.stroke" [tooltip]="chartOptions.tooltip" [grid]="chartOptions.grid"></apx-chart>
 </div>

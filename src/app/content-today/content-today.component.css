@@ -14,10 +14,6 @@
     border-radius: 6px;
 }
 
-.today__header__dot {
-    font-size: var(--size-3xl);
-}
-
 .today__data {
     display: flex;
     flex-direction: column;

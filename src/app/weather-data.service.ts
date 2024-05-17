@@ -105,7 +105,8 @@ function calculateHourlyAverages(data: Array<Array<any>>): Array<Array<any>> {
     // Calculate averages for each hour
     const hourlyAveragesResult: Array<Array<any>> = [];
     for (const [key, { sum, count }] of hourlyAverages) {
-        const average = sum / count;
+        const average = (sum / count);
+        // const average = (sum / count).toFixed(1);
         const [date, time] = key.split(' ');
         hourlyAveragesResult.push([date, time, average]);
     }
