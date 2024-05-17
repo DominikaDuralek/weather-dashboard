@@ -51,7 +51,8 @@ mat-button-toggle {
 
 mat-table {
     background: none;
-    max-height: 500px;
+    /* max-height: 450px; */
+    max-height: 30.5rem;
     white-space: nowrap;
     border-collapse: collapse;
 
@@ -64,6 +65,7 @@ mat-header-cell {
     font-weight: bold;
 
     border-right: dashed var(--color-slate700) 1px;
+    /* border-right: dashed var(--color-accent500) 1px; */
 }
 
 mat-cell {
@@ -71,10 +73,12 @@ mat-cell {
     font-size: var(--size-s);
 
     border-right: dashed var(--color-slate700) 1px;
+    /* border-right: dashed var(--color-accent500) 1px; */
 }
 
 mat-row {
     border-top: 1px var(--color-slate700) solid;
+    /* border-top: dashed var(--color-accent500) 1px; */
 }
 
 .mat-column-date {
@@ -102,6 +106,5 @@ mat-row {
 }
 
 .mat-mdc-row:hover .mat-mdc-cell {
-    /* border-color: currentColor; */
-    background-color: var(--color-accent900);
+    background-color: var(--color-slate900);
   }
