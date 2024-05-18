@@ -10,16 +10,20 @@
 
 .table__settings {
     display: flex;
-    gap: 1rem;
+    gap: 0.6rem;
     align-items: center;
     padding-left: 1rem;
     padding-bottom: 1rem;
 
-    border-bottom: solid 1px var(--color-slate700);
+    width: 232%;
+
+    /* border-bottom: solid 1px var(--color-slate700); */
     
     background-color: var(--color-slate800);
     position: sticky;
     top: 0px;
+
+    font-size: 10px;
 }
 
 .table__container {
@@ -34,17 +38,16 @@ mat-button-toggle-group {
 }
 
 mat-button-toggle {
-    width: 4rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 
     background-color: var(--color-accent800);
     color: var(--color-accent300);
 
-    font-size: var(--size-xs);
+    font-size: var(--size-xxs);
 }
 
 /* Custom styles for mat-button-toggle when selected */
@@ -68,68 +71,247 @@ mat-header-cell {
     color: var(--color-slate200);
     font-weight: bold;
     border-right: dashed var(--color-slate700) 1px;
-    font-size: var(--size-s);
+    font-size: var(--size-xxs);
+
+    min-width: 3rem;
+
+    justify-content: center;
 }
 
 mat-cell {
     color: var(--color-slate200);
     border-right: dashed var(--color-slate700) 1px;
     padding: 0.75em;
-    font-size: var(--size-s);
+    font-size: var(--size-xxs);
+    text-wrap: nowrap;
+
+    border-top: 1px var(--color-slate700) solid;
+
+    min-width: 3rem;
+
+    justify-content: center;
 }
 
-mat-row {
+/* mat-row {
     border-top: 1px var(--color-slate700) solid;
-}
+} */
 
 .mat-column-id {
-    flex: 0 0 8%;
+    /* flex: 0 0 8%; */
+    min-width: 3rem;
 }
 
 .mat-column-date {
-    flex: 0 0 8%;
+    /* flex: 0 0 8%; */
+    min-width: 4rem;
 }
 
 .mat-column-time {
-    flex: 0 0 8%;
+    /* flex: 0 0 8%; */
+    min-width: 3rem;
 }
 
 .mat-column-temperature {
-    flex: 0 0 8%;
+    /* flex: 0 0 8%; */
+    min-width: 3rem;
 }
 
 .mat-column-humidity {
-    flex: 0 0 8%;
+    /* flex: 0 0 8%; */
 }
 
 .mat-column-pressure {
-    flex: 0 0 10%;
+    /* flex: 0 0 10%; */
 }
 
 .mat-column-rain {
-    flex: 0 0 10%;
+    /* flex: 0 0 10%; */
 }
 
 .mat-column-windspeed {
-    flex: 0 0 10%;
+    /* flex: 0 0 10%; */
 }
 
 .mat-column-winddirection {
-    flex: 0 0 6%;
+    /* flex: 0 0 6%; */
 }
 
 .mat-column-light {
-    flex: 0 0 8%;
+    /* flex: 0 0 8%; */
 }
 
 .mat-column-pm10 {
-    flex: 0 0 8%;
+    /* flex: 0 0 8%; */
 }
 
 .mat-column-pm25 {
-    flex: 0 0 8%;
+    /* flex: 0 0 8%; */
 }
 
 .mat-mdc-row:hover .mat-mdc-cell {
     background-color: var(--color-slate900);
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+@media (min-width: 1536px) {
+    :host {
+        color: var(--color-slate200);
+        display: block;
+        height: 100%;
+        width: 100%;
+    
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+    
+    .table__settings {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+
+        width: auto;
+    
+        border-bottom: solid 1px var(--color-slate700);
+        
+        background-color: var(--color-slate800);
+        position: sticky;
+        top: 0px;
+    }
+    
+    .table__container {
+        height: 100%;
+        width: 100%;
+    }
+    
+    mat-button-toggle-group {
+        border: 0;
+        outline: 0;
+        border-radius: 6px;
+    }
+    
+    mat-button-toggle {
+        width: 4rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    
+        background-color: var(--color-accent800);
+        color: var(--color-accent300);
+    
+        font-size: var(--size-xs);
+    }
+    
+    /* Custom styles for mat-button-toggle when selected */
+    .mat-button-toggle.mat-button-toggle-checked {
+        background-color: var(--color-accent500);
+        color: var(--color-accent200);
+    }
+    
+    /* Custom hover styles for mat-button-toggle */
+    .mat-button-toggle:hover {
+        background-color: var(--color-accent400);
+    }
+    
+    mat-table {
+        background: none;
+        max-height: 30.5rem;
+        border-collapse: collapse;
+    }
+    
+    mat-header-cell {
+        color: var(--color-slate200);
+        font-weight: bold;
+        border-right: dashed var(--color-slate700) 1px;
+        font-size: var(--size-s);
+
+        justify-content: unset;
+    }
+    
+    mat-cell {
+        color: var(--color-slate200);
+        border-right: dashed var(--color-slate700) 1px;
+        padding: 0.75em;
+        font-size: var(--size-s);
+
+        border-top: 1px var(--color-slate700) solid;
+    
+        display:inline-block;
+
+        justify-content: unset;
+    }
+    
+    /* mat-row {
+        border-top: 1px var(--color-slate700) solid;
+    } */
+    
+    .mat-column-id {
+        flex: 0 0 8%;
+    }
+    
+    .mat-column-date {
+        flex: 0 0 8%;
+    }
+    
+    .mat-column-time {
+        flex: 0 0 8%;
+    }
+    
+    .mat-column-temperature {
+        flex: 0 0 8%;
+    }
+    
+    .mat-column-humidity {
+        flex: 0 0 8%;
+    }
+    
+    .mat-column-pressure {
+        flex: 0 0 10%;
+    }
+    
+    .mat-column-rain {
+        flex: 0 0 10%;
+    }
+    
+    .mat-column-windspeed {
+        flex: 0 0 10%;
+    }
+    
+    .mat-column-winddirection {
+        flex: 0 0 6%;
+    }
+    
+    .mat-column-light {
+        flex: 0 0 8%;
+    }
+    
+    .mat-column-pm10 {
+        flex: 0 0 8%;
+    }
+    
+    .mat-column-pm25 {
+        flex: 0 0 8%;
+    }
+    
+    .mat-mdc-row:hover .mat-mdc-cell {
+        background-color: var(--color-slate900);
+    } 
 }

@@ -1,9 +1,10 @@
 :host {
-    height: 100vh;
+    height: auto;
+    width: 100%;
     background-color: var(--color-accent900);
     color: var(--color-accent400);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -11,8 +12,8 @@
 }
 
 .sidebar__item {
-    height: var(--size-4xl);
-    width: var(--size-4xl);
+    height: var(--size-2xl);
+    width: var(--size-2xl);
     transition: 0.5s;
 }
 
@@ -22,22 +23,84 @@
     transition: 0.5s;
 }
 
-:host :first-child {
-    margin-top: auto;
-}
+/* :host :first-child {
+    margin-left: auto;
+} */
 
 .sidebar__theme-toggle {
-    margin-top: auto;
+    margin-left: auto;
     transition: 0.5s;
 }
 
 .sidebar__sun {
-    height: var(--size-4xl);
-    width: var(--size-4xl);
+    height: var(--size-2xl);
+    width: var(--size-2xl);
 }
 
 .sidebar__moon {
     display: none;
-    height: var(--size-4xl);
-    width: var(--size-4xl);
+    height: var(--size-2xl);
+    width: var(--size-2xl);
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+@media (min-width: 1536px) {
+    :host {
+        height: 100vh;
+        background-color: var(--color-accent900);
+        color: var(--color-accent400);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .sidebar__item {
+        height: var(--size-4xl);
+        width: var(--size-4xl);
+        transition: 0.5s;
+    }
+    
+    .sidebar__item:hover,
+    .sidebar__theme-toggle:hover {
+        color: var(--color-light);
+        transition: 0.5s;
+    }
+    
+    :host :first-child {
+        margin-top: auto;
+    }
+    
+    .sidebar__theme-toggle {
+        margin-top: auto;
+        transition: 0.5s;
+    }
+    
+    .sidebar__sun {
+        height: var(--size-4xl);
+        width: var(--size-4xl);
+    }
+    
+    .sidebar__moon {
+        display: none;
+        height: var(--size-4xl);
+        width: var(--size-4xl);
+    }
 }

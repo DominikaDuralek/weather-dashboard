@@ -1,8 +1,37 @@
 .tables__table-container {
-    width: 88rem;
+    width: 18rem;
+    height: 30rem;
     background-color: var(--color-slate800);
     display: flex;
     justify-content: center;
     padding: 1rem;
     border-radius: 6px;    
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+@media (min-width: 1536px) {
+    .tables__table-container {
+        width: 88rem;
+        height: auto;
+        background-color: var(--color-slate800);
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        border-radius: 6px;    
+    }
 }

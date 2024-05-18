@@ -5,8 +5,8 @@
 
 .today__tiles-grid {
     display: grid;
-    grid-template-rows: repeat(3, 12rem);
-    grid-template-columns: repeat(3, 12rem);
+    grid-template-rows: repeat(3, 6rem);
+    grid-template-columns: repeat(3, 6rem);
     justify-items: center;
     align-items: center;
 
@@ -17,19 +17,75 @@
 .today__data {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
 }
 
 .today__chart-container,
 .today__table-container {
-    width: 50rem;
-    height: 17rem;
+    width: 18rem;
+    height: 18rem;
     background-color: var(--color-slate800);
     display: flex;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 6px;
-
     overflow: hidden;
+
+    /* margin-left: 2rem;
+
+    justify-self: flex-start; */
+}
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+@media (min-width: 1536px) {
+    :host {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .today__tiles-grid {
+        display: grid;
+        grid-template-rows: repeat(3, 12rem);
+        grid-template-columns: repeat(3, 12rem);
+        justify-items: center;
+        align-items: center;
+    
+        background-color: var(--color-slate800);
+        border-radius: 6px;
+    }
+    
+    .today__data {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .today__chart-container,
+    .today__table-container {
+        width: 50rem;
+        height: 17rem;
+        background-color: var(--color-slate800);
+        display: flex;
+        padding: 1rem;
+        border-radius: 6px;
+        overflow: hidden;
+    }
 }
