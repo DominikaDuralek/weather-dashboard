@@ -1,8 +1,11 @@
 :host {
-    /* background-color: var(--color-slate700); */
     color: var(--color-slate200);
-
     display: block;
+    height: 100%;
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 .table__settings {
@@ -10,10 +13,16 @@
     gap: 1rem;
     align-items: center;
     padding-left: 1rem;
+    padding-bottom: 1rem;
+
+    border-bottom: solid 1px var(--color-slate700);
+    
+    background-color: var(--color-slate800);
+    position: sticky;
+    top: 0px;
 }
 
 .table__container {
-    /* display: flex; */
     height: 100%;
     width: 100%;
 }
@@ -21,6 +30,7 @@
 mat-button-toggle-group {
     border: 0;
     outline: 0;
+    border-radius: 6px;
 }
 
 mat-button-toggle {
@@ -30,7 +40,6 @@ mat-button-toggle {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0.6em;
 
     background-color: var(--color-accent800);
     color: var(--color-accent300);
@@ -51,60 +60,76 @@ mat-button-toggle {
 
 mat-table {
     background: none;
-    /* max-height: 450px; */
     max-height: 30.5rem;
-    white-space: nowrap;
     border-collapse: collapse;
-
-    margin-top: 1.25rem;
 }
 
 mat-header-cell {
     color: var(--color-slate200);
-    font-size: var(--size-s);
     font-weight: bold;
-
     border-right: dashed var(--color-slate700) 1px;
-    /* border-right: dashed var(--color-accent500) 1px; */
+    font-size: var(--size-s);
 }
 
 mat-cell {
     color: var(--color-slate200);
-    font-size: var(--size-s);
-
     border-right: dashed var(--color-slate700) 1px;
-    /* border-right: dashed var(--color-accent500) 1px; */
+    padding: 0.75em;
+    font-size: var(--size-s);
 }
 
 mat-row {
     border-top: 1px var(--color-slate700) solid;
-    /* border-top: dashed var(--color-accent500) 1px; */
+}
+
+.mat-column-id {
+    flex: 0 0 8%;
 }
 
 .mat-column-date {
-    min-width: 7rem;
+    flex: 0 0 8%;
+}
+
+.mat-column-time {
+    flex: 0 0 8%;
+}
+
+.mat-column-temperature {
+    flex: 0 0 8%;
+}
+
+.mat-column-humidity {
+    flex: 0 0 8%;
 }
 
 .mat-column-pressure {
-    min-width: 7rem;
+    flex: 0 0 10%;
 }
 
 .mat-column-rain {
-    min-width: 7rem;
+    flex: 0 0 10%;
 }
 
 .mat-column-windspeed {
-    min-width: 7rem;
+    flex: 0 0 10%;
+}
+
+.mat-column-winddirection {
+    flex: 0 0 6%;
 }
 
 .mat-column-light {
-    min-width: 7rem;
+    flex: 0 0 8%;
 }
 
 .mat-column-pm10 {
-    min-width: 5rem;
+    flex: 0 0 8%;
+}
+
+.mat-column-pm25 {
+    flex: 0 0 8%;
 }
 
 .mat-mdc-row:hover .mat-mdc-cell {
     background-color: var(--color-slate900);
-  }
+}

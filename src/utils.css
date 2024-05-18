@@ -23,7 +23,6 @@
     align-items: center;
     gap: 2rem;
     padding-left: 2rem;
-    
     justify-content: baseline;
 }
 
@@ -41,12 +40,8 @@
     display: flex;
     padding-top: 2rem;
     gap: 2rem;
-    
-    /* justify-content: center; */
     justify-content: flex-start;
-
     padding-left: 2rem;
-    /* padding-right: 2rem; */
 }
 
 .settings-item {
@@ -62,4 +57,7 @@
     text-align: left;
 }
 
-
+/* Add this to your styles.css or component-specific CSS file */
+.apexcharts-tooltip {
+    padding: 0.5rem !important;
+}

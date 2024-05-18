@@ -25,7 +25,7 @@
         </mat-button-toggle-group>
 </div>
 <div class="table__container">
-    <mat-table #table [dataSource]="dataSource">
+    <mat-table #table [dataSource]="dataSource" class="mat-table">
         <ng-container matColumnDef="id">
             <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
             <mat-cell *matCellDef="let weatherData"> {{weatherData[0]}} </mat-cell>

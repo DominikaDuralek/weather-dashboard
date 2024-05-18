@@ -32,9 +32,8 @@ export class DataChartComponent {
   
   constructor() {
     let initialValuesArray: number[] = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2]);
-    let initialMinMax: any[] = determineChartMinMax(initialValuesArray);
-
     let initialXaxisArray = this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[1]);
+    let initialMinMax: any[] = determineChartMinMax(initialValuesArray);
 
     this.chartOptions = {
       chart: {
@@ -50,7 +49,6 @@ export class DataChartComponent {
       },
       series: [
         {
-          name: 'Values',
           data: this.weatherDataService.getRecordsChart(this.selectedValue, this.selectedType, this.selectedDay, this.selectedWeek).map(record => record[2]),
         },
       ],
@@ -61,7 +59,7 @@ export class DataChartComponent {
             colors: '#93c5fd',
           },
           rotateAlways: true,
-          formatter: function (value: string, timestamp: any, index: any) {
+          formatter: function (value: string) {
             // Show label if it contains the specified string
             return filterLabelsContaining(initialXaxisArray, ":00").includes(value) ? value : '';
           }
@@ -91,13 +89,11 @@ export class DataChartComponent {
         style: {
           fontSize: '12px'
         },
-        custom: function({ series, seriesIndex, dataPointIndex, w }: { series: any[], seriesIndex: number, dataPointIndex: number, w: any }) {
-          const xValue = w.globals.categoryLabels[dataPointIndex];
-          const yValue = series[seriesIndex][dataPointIndex];
-          return `<div>Time: ${xValue}</div>
-                  <div>Value: ${yValue}</div>`;
+        custom: function({dataPointIndex}: {dataPointIndex: number}) {
+          return `<div>Time: ${initialXaxisArray[dataPointIndex]}</div>
+          <div>Value: ${initialValuesArray[dataPointIndex]}</div>`;
         }
-      },
+      }
     };
   }
 
@@ -165,7 +161,7 @@ export class DataChartComponent {
               colors: '#93c5fd',
             },
             rotateAlways: true,
-            formatter: function (value: string, timestamp: any, index: any) {
+            formatter: function (value: string) {
               // Show label if it contains the specified string
               return filterLabelsContaining(xaxisArray, ":00").includes(value) ? value : '';
             }
@@ -233,6 +229,7 @@ function filterLabelsContaining(categories: string[], searchString: string) {
   return categories.filter(label => label.includes(searchString));
 }
 
+// Set min and max value of the y array
 function determineChartMinMax(data: number[]): any[] {
   let minMax: any[] = [];
   const dataMin: number = Math.min(...data);
