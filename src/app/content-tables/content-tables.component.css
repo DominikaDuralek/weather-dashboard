@@ -8,6 +8,20 @@
     border-radius: 6px;    
 }
 
+/* xxs */
+@media (min-width: 375px) {
+    .tables__table-container {
+        width: 22.5rem;
+        height: 30rem;
+        background-color: var(--color-slate800);
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        border-radius: 6px;    
+    }
+    
+}
+
 /* xs */
 /* @media (min-width: 475px) {} */
 

@@ -90,7 +90,7 @@
 /* xxs */
 @media (min-width: 375px) {    
     .content__header__text {
-        font-size: var(--size-s);
+        font-size: var(--size-base);
     }
     
     .content__header__dot {
