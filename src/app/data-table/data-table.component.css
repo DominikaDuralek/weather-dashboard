@@ -10,7 +10,7 @@
 
 .table__settings {
     display: flex;
-    gap: 0.6rem;
+    gap: 0.5rem;
     align-items: center;
     padding-left: 1rem;
     padding-bottom: 1rem;
@@ -23,7 +23,7 @@
     position: sticky;
     top: 0px;
 
-    font-size: 10px;
+    font-size: var(--size-xs);
 }
 
 .table__container {
@@ -38,8 +38,8 @@ mat-button-toggle-group {
 }
 
 mat-button-toggle {
-    width: 2.5rem;
-    height: 1.25rem;
+    width: 3.5rem;
+    height: 1.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +47,7 @@ mat-button-toggle {
     background-color: var(--color-accent800);
     color: var(--color-accent300);
 
-    font-size: var(--size-xxs);
+    font-size: var(--size-xs);
 }
 
 /* Custom styles for mat-button-toggle when selected */
@@ -71,7 +71,7 @@ mat-header-cell {
     color: var(--color-slate200);
     font-weight: bold;
     border-right: dashed var(--color-slate700) 1px;
-    font-size: var(--size-xxs);
+    font-size: var(--size-xs);
 
     min-width: 3rem;
 
@@ -81,20 +81,16 @@ mat-header-cell {
 mat-cell {
     color: var(--color-slate200);
     border-right: dashed var(--color-slate700) 1px;
-    padding: 0.75em;
-    font-size: var(--size-xxs);
+    font-size: var(--size-xs);
     text-wrap: nowrap;
 
     border-top: 1px var(--color-slate700) solid;
 
     min-width: 3rem;
+    height: 1rem;
 
     justify-content: center;
 }
-
-/* mat-row {
-    border-top: 1px var(--color-slate700) solid;
-} */
 
 .mat-column-id {
     /* flex: 0 0 8%; */
@@ -251,6 +247,8 @@ mat-cell {
         border-right: dashed var(--color-slate700) 1px;
         padding: 0.75em;
         font-size: var(--size-s);
+
+        text-wrap: unset;
 
         border-top: 1px var(--color-slate700) solid;
     
