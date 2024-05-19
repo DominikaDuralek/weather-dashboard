@@ -204,8 +204,8 @@
     }
     
     .sidebar__item {
-        height: var(--size-xl);
-        width: var(--size-xl);
+        height: var(--size-2xl);
+        width: var(--size-2xl);
         transition: 0.5s;
     }
     
@@ -225,14 +225,14 @@
     }
     
     .sidebar__sun {
-        height: var(--size-xl);
-        width: var(--size-xl);
+        height: var(--size-2xl);
+        width: var(--size-2xl);
     }
     
     .sidebar__moon {
         display: none;
-        height: var(--size-xl);
-        width: var(--size-xl);
+        height: var(--size-2xl);
+        width: var(--size-2xl);
     }
 }
 

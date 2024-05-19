@@ -39,7 +39,7 @@
 
 @media screen and (orientation:landscape) {
     .tables__table-container {
-        width: 88rem;
+        width: 36rem;
         height: auto;
         background-color: var(--color-slate800);
         display: flex;
