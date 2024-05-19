@@ -189,8 +189,9 @@
 
 @media screen and (orientation: landscape) {
     :host {
-        height: auto;
-        width: 100%;
+        /* height: auto;
+        width: 100vw; */
+        width: auto;
         background-color: var(--color-accent900);
         color: var(--color-accent400);
         display: flex;

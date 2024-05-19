@@ -55,6 +55,7 @@ html {
 
 body {
     height: 100%;
+    width: 100%;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: var(--color-slate900);
     color: var(--color-slate100);
@@ -120,6 +121,23 @@ input[type="week"]::-webkit-calendar-picker-indicator {
 
 /* sm */
 @media (min-width: 640px) {
+}
+
+@media screen and (orientation:landscape) {
+    html {
+        width: unset;
+        height: 100%;
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        width: unset;
+        height: 100%;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        background-color: var(--color-slate900);
+        color: var(--color-slate100);
+        overflow: auto;
+    }
 }
 
 /* md */
