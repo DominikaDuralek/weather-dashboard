@@ -112,38 +112,6 @@ mat-cell {
     min-width: 3rem;
 }
 
-.mat-column-humidity {
-    /* flex: 0 0 8%; */
-}
-
-.mat-column-pressure {
-    /* flex: 0 0 10%; */
-}
-
-.mat-column-rain {
-    /* flex: 0 0 10%; */
-}
-
-.mat-column-windspeed {
-    /* flex: 0 0 10%; */
-}
-
-.mat-column-winddirection {
-    /* flex: 0 0 6%; */
-}
-
-.mat-column-light {
-    /* flex: 0 0 8%; */
-}
-
-.mat-column-pm10 {
-    /* flex: 0 0 8%; */
-}
-
-.mat-column-pm25 {
-    /* flex: 0 0 8%; */
-}
-
 .mat-mdc-row:hover .mat-mdc-cell {
     background-color: var(--color-slate900);
 }
@@ -166,17 +134,6 @@ mat-cell {
         top: 0px;
 
         margin-top: 0.5rem;
-    }
-
-    /* Custom styles for mat-button-toggle when selected */
-    .mat-button-toggle.mat-button-toggle-checked {
-        background-color: var(--color-accent500);
-        color: var(--color-accent200);
-    }
-
-    /* Custom hover styles for mat-button-toggle */
-    .mat-button-toggle:hover {
-        background-color: var(--color-accent400);
     }
 
     mat-table {
@@ -208,62 +165,6 @@ mat-cell {
         height: 1rem;
 
         justify-content: center;
-    }
-
-    .mat-column-id {
-        /* flex: 0 0 8%; */
-        min-width: 3rem;
-    }
-
-    .mat-column-date {
-        /* flex: 0 0 8%; */
-        min-width: 4rem;
-    }
-
-    .mat-column-time {
-        /* flex: 0 0 8%; */
-        min-width: 3rem;
-    }
-
-    .mat-column-temperature {
-        /* flex: 0 0 8%; */
-        min-width: 3rem;
-    }
-
-    .mat-column-humidity {
-        /* flex: 0 0 8%; */
-    }
-
-    .mat-column-pressure {
-        /* flex: 0 0 10%; */
-    }
-
-    .mat-column-rain {
-        /* flex: 0 0 10%; */
-    }
-
-    .mat-column-windspeed {
-        /* flex: 0 0 10%; */
-    }
-
-    .mat-column-winddirection {
-        /* flex: 0 0 6%; */
-    }
-
-    .mat-column-light {
-        /* flex: 0 0 8%; */
-    }
-
-    .mat-column-pm10 {
-        /* flex: 0 0 8%; */
-    }
-
-    .mat-column-pm25 {
-        /* flex: 0 0 8%; */
-    }
-
-    .mat-mdc-row:hover .mat-mdc-cell {
-        background-color: var(--color-slate900);
     }
 }
 
