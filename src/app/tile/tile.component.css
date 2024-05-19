@@ -49,6 +49,60 @@
     margin-top: -1.25rem;
 }
 
+/* xxs */
+@media (min-width: 375px) {
+    :host {
+        width: 6.25rem;
+        height: 6.25rem;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-accent900);
+        color:  var(--color-accent300);
+        font-size: var(--size-base);
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        border-radius: 6px;
+        /* padding-bottom: 1rem; */
+    }
+    
+    .tile__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* text-align: center; */
+    }
+    
+    .tile__content__container {
+        display: flex;
+        gap: 0.25rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .tile__content__icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    
+    .tile__content__value {
+        font-size: var(--size-xs);
+    }
+    
+    .tile__text {
+        font-size: var(--size-xs);
+        /* margin-top: -3.25rem; */
+    }
+    
+    #pieChart {
+        width: 110px;
+        height: 110px;
+        margin-bottom: -3.25rem;
+        margin-top: -1.75rem;
+    }
+}
+
 /* xs */
 /* @media (min-width: 475px) {} */
 

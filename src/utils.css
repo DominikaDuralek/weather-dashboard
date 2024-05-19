@@ -96,6 +96,14 @@
     .content__header__dot {
         font-size: var(--size-l);
     }
+
+    .content__main {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: center;
+    }
     
     .settings-item {
         background-color: var(--color-accent800);
