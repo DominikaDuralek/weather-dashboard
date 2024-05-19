@@ -122,15 +122,9 @@ mat-cell {
         align-items: center;
         padding-left: 1rem;
         padding-bottom: 1rem;
-
         width: auto;
-
-        border-bottom: solid 1px var(--color-slate700);
-
-        background-color: var(--color-slate800);
         position: sticky;
         top: 0px;
-
         margin-top: 0.5rem;
     }
 
@@ -141,27 +135,17 @@ mat-cell {
     }
 
     mat-header-cell {
-        color: var(--color-slate200);
         font-weight: bold;
-        border-right: dashed var(--color-slate700) 1px;
         font-size: var(--size-xs);
-
         min-width: 3rem;
-
         justify-content: center;
     }
 
     mat-cell {
-        color: var(--color-slate200);
-        border-right: dashed var(--color-slate700) 1px;
         font-size: var(--size-xs);
         text-wrap: nowrap;
-
-        border-top: 1px var(--color-slate700) solid;
-
         min-width: 3rem;
         height: 1rem;
-
         justify-content: center;
     }
 }
@@ -176,7 +160,6 @@ mat-cell {
     .table__settings {
         gap: 1rem;
         width: auto;
-        border-bottom: solid 1px var(--color-slate700);
     }
 
     mat-button-toggle-group {
@@ -201,11 +184,7 @@ mat-cell {
     mat-cell {
         padding: 0.75em;
         font-size: var(--size-xxs);
-
         text-wrap: unset;
-
-        border-top: 1px var(--color-slate700) solid;
-
         display: inline-block;
     }
 }
@@ -222,7 +201,6 @@ mat-cell {
 /* 2xl */
 @media (min-width: 1536px) {
     :host {
-        color: var(--color-slate200);
         display: block;
         height: 100%;
         width: 100%;
@@ -237,12 +215,7 @@ mat-cell {
         align-items: center;
         padding-left: 1rem;
         padding-bottom: 1rem;
-
         width: auto;
-
-        border-bottom: solid 1px var(--color-slate700);
-
-        background-color: var(--color-slate800);
         position: sticky;
         top: 0px;
     }
@@ -265,22 +238,7 @@ mat-cell {
         align-items: center;
         justify-content: center;
         text-align: center;
-
-        background-color: var(--color-accent800);
-        color: var(--color-accent300);
-
         font-size: var(--size-xs);
-    }
-
-    /* Custom styles for mat-button-toggle when selected */
-    .mat-button-toggle.mat-button-toggle-checked {
-        background-color: var(--color-accent500);
-        color: var(--color-accent200);
-    }
-
-    /* Custom hover styles for mat-button-toggle */
-    .mat-button-toggle:hover {
-        background-color: var(--color-accent400);
     }
 
     mat-table {
@@ -290,32 +248,18 @@ mat-cell {
     }
 
     mat-header-cell {
-        color: var(--color-slate200);
-        font-weight: bold;
-        border-right: dashed var(--color-slate700) 1px;
         font-size: var(--size-s);
-
         justify-content: unset;
     }
 
     mat-cell {
-        color: var(--color-slate200);
         border-right: dashed var(--color-slate700) 1px;
         padding: 0.75em;
         font-size: var(--size-s);
-
         text-wrap: unset;
-
-        border-top: 1px var(--color-slate700) solid;
-
         display: inline-block;
-
         justify-content: unset;
     }
-
-    /* mat-row {
-        border-top: 1px var(--color-slate700) solid;
-    } */
 
     .mat-column-id {
         flex: 0 0 8%;
