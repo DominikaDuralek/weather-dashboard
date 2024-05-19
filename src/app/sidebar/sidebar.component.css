@@ -196,8 +196,11 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         padding: 0.5rem;
+
+        padding-left: 2em;
+        padding-right: 2rem;
     }
     
     .sidebar__item {

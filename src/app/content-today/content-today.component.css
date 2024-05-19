@@ -115,10 +115,11 @@
     
     .today__tiles-grid {
         display: grid;
-        grid-template-rows: repeat(3, 5.5rem);
         grid-template-columns: repeat(3, 12rem);
+        grid-template-rows: repeat(3, 6rem);
         justify-items: center;
         align-items: center;
+
         background-color: var(--color-slate800);
         border-radius: 6px;
     }
@@ -134,7 +135,7 @@
     .today__chart-container,
     .today__table-container {
         width: 36rem;
-        height: 12rem;
+        height: 18rem;
         background-color: var(--color-slate800);
         display: flex;
         padding: none;
