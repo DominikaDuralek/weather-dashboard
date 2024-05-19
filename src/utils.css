@@ -263,32 +263,32 @@
 @media screen and (orientation:landscape) {
     .content__header {
         width: 100vw;
-        min-height: 2rem;
+        min-height: 3rem;
         display: flex;
         align-items: center;
         gap: 1rem;
-        padding-left: 1rem;
-        justify-content: flex-start;
+        /* padding-left: 1rem; */
+        justify-content: center;
     }
     
     .content__header__text {
-        font-size: var(--size-xs);
+        font-size: var(--size-base);
         font-weight: 500;
     }
     
     .content__header__dot {
-        font-size: var(--size-s);
+        font-size: var(--size-l);
     }
     
     .content__main {
         width: 100vw;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         padding-top: unset;
         gap: 0.5rem;
-        justify-content: flex-start;
-        align-items: baseline;
-        padding-left: 1rem;
+        justify-content: center;
+        align-items: center;
+        /* padding-left: 1rem; */
     }
     
     .settings-item {

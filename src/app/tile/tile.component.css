@@ -162,7 +162,7 @@
 
 @media screen and (orientation:landscape) {
     :host {
-        width: 4.5rem;
+        width: 8rem;
         height: 4.5rem;
         display: flex;
         flex-direction: column;
@@ -186,7 +186,7 @@
     
     .tile__content__container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.5rem;
         justify-content: center;
         align-items: center;
@@ -198,11 +198,11 @@
     }
     
     .tile__content__value {
-        font-size: var(--size-xxs);
+        font-size: var(--size-xs);
     }
     
     .tile__text {
-        font-size: var(--size-xxs);
+        font-size: var(--size-xs);
         /* margin-top: -3.25rem; */
     }
     
