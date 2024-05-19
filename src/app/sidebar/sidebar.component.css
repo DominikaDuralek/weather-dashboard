@@ -186,7 +186,7 @@
     }
 }
 
-@media (orientation: landscape) {
+@media screen and (orientation: landscape) {
     :host {
         height: 100vh;
         background-color: var(--color-accent900);

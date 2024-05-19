@@ -275,7 +275,7 @@
     }
 }
 
-@media (orientation: landscape) {
+@media screen and (orientation: landscape) {
     .content__header {
         width: 100vw;
         min-height: 4rem;
