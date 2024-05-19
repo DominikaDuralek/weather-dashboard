@@ -19,11 +19,20 @@
         padding: 1rem;
         border-radius: 6px;    
     }
-    
 }
 
 /* xs */
-/* @media (min-width: 475px) {} */
+@media (min-width: 475px) {
+    .tables__table-container {
+        width: 27rem;
+        height: 30rem;
+        background-color: var(--color-slate800);
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        border-radius: 6px;    
+    }
+}
 
 /* sm */
 /* @media (min-width: 640px) {} */
