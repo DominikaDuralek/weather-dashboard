@@ -119,7 +119,30 @@ input[type="week"]::-webkit-calendar-picker-indicator {
 /* @media (min-width: 475px) {} */
 
 /* sm */
-/* @media (min-width: 640px) {} */
+@media (min-width: 640px) {
+    body {
+        height: 100%;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        background-color: var(--color-slate900);
+        color: var(--color-slate100);
+        overflow: hidden;
+    }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    
+        background-image: url('assets/select-arrow.svg');
+        background-size: 0.6em 0.6em;
+        background-repeat: no-repeat;
+        background-position: right 1em center;
+    
+        min-width: 8rem;
+        border: none !important;
+        outline: none !important;
+    } 
+}
 
 /* md */
 /* @media (min-width: 768px) {} */

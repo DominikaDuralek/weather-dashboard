@@ -202,7 +202,76 @@
 }
 
 /* sm */
-/* @media (min-width: 640px) {} */
+@media (min-width: 640px) {
+    .content__header {
+        width: 100vw;
+        min-height: 4rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding-left: 2rem;
+        justify-content: flex-start;
+    }
+    
+    .content__header__text {
+        font-size: var(--size-2xl);
+        font-weight: 500;
+    }
+    
+    .content__header__dot {
+        font-size: var(--size-3xl);
+    }
+    
+    .content__main {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        padding-top: 2rem;
+        gap: 2rem;
+        justify-content: flex-start;
+        padding-left: 2rem;
+    }
+    
+    .settings-item {
+        background-color: var(--color-accent800);
+        color: var(--color-accent300);
+        font-size: var(--size-s);
+    
+        padding: 0.6em;
+        padding-left: 1em;
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        text-align: left;
+    }
+    
+    .apexcharts-tooltip {
+        padding: 0.5rem !important;
+    }
+    
+    .custom-date-picker {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .custom-date-picker::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 1em;
+        transform: translateY(-50%);
+        width: 1.25em;
+        height: 1.25em;
+        background-image: url('assets/calendar.svg');
+        background-size: 1em 1em;
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* Ensure the icon is not clickable */
+        pointer-events: none;
+        /* Ensure the icon is below the input field */
+        z-index: 1;
+    }
+}
 
 /* md */
 /* @media (min-width: 768px) {} */
