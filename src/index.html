@@ -11,5 +11,12 @@
 </head>
 <body>
   <app-root></app-root>
+
+  <script>
+    // Debugging orientation changes
+    window.addEventListener('orientationchange', function() {
+      console.log('Orientation changed to: ' + (window.orientation === 0 ? 'portrait' : 'landscape'));
+    });
+  </script>
 </body>
 </html>
