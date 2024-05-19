@@ -14,7 +14,7 @@
 /* @media (min-width: 475px) {} */
 
 /* sm */
-@media (min-width: 600px) {
+@media (min-width: 600px) and (min-height: 600px) {
     .container-all {
         height: 100vh;
         width: 100vw;
