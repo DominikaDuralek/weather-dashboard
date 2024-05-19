@@ -115,8 +115,8 @@
     
     .today__tiles-grid {
         display: grid;
-        grid-template-rows: repeat(3, 5rem);
-        grid-template-columns: repeat(3, 5rem);
+        grid-template-rows: repeat(3, 5.5rem);
+        grid-template-columns: repeat(3, 5.5rem);
         justify-items: center;
         align-items: center;
     
@@ -127,18 +127,18 @@
     .today__data {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        justify-content: center;
-        align-items: center;
+        gap: 0.5rem;
+        /* justify-content: center;
+        align-items: center; */
     }
     
     .today__chart-container,
     .today__table-container {
         width: 20rem;
-        height: 7rem;
+        height: 8rem;
         background-color: var(--color-slate800);
         display: flex;
-        padding: 1rem;
+        padding: none;
         border-radius: 6px;
         overflow: hidden;
     }

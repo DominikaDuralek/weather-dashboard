@@ -18,21 +18,15 @@
 
 @media screen and (orientation:landscape) {
     .container-all {
-        /* height: 100vh;
-        width: 100vw; */
-        width: unset;
-        height: 100%;
-        height: unset;
-        width: unset;
+        height: 100vh;
+        width: 100vw;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
     
     .container-content {
-        width: unset;
+        width: 100%;
         height: 100%;
-        /* height: unset;
-        width: unset; */
     }
 }
 

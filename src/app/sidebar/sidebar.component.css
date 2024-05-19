@@ -189,22 +189,20 @@
 
 @media screen and (orientation: landscape) {
     :host {
-        /* height: auto;
-        width: 100vw; */
-        width: auto;
+        height: 100vh;
         background-color: var(--color-accent900);
         color: var(--color-accent400);
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
         padding: 1rem;
     }
     
     .sidebar__item {
-        height: var(--size-3xl);
-        width: var(--size-3xl);
+        height: var(--size-4xl);
+        width: var(--size-4xl);
         transition: 0.5s;
     }
     
@@ -214,24 +212,24 @@
         transition: 0.5s;
     }
     
-    /* :host :first-child {
-        margin-left: auto;
-    } */
+    :host :first-child {
+        margin-top: auto;
+    }
     
     .sidebar__theme-toggle {
-        margin-left: auto;
+        margin-top: auto;
         transition: 0.5s;
     }
     
     .sidebar__sun {
-        height: var(--size-3xl);
-        width: var(--size-3xl);
+        height: var(--size-4xl);
+        width: var(--size-4xl);
     }
     
     .sidebar__moon {
         display: none;
-        height: var(--size-3xl);
-        width: var(--size-3xl);
+        height: var(--size-4xl);
+        width: var(--size-4xl);
     }
 }
 

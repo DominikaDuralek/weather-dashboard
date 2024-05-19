@@ -263,7 +263,7 @@
 @media screen and (orientation:landscape) {
     .content__header {
         width: 100vw;
-        min-height: 4rem;
+        min-height: 2rem;
         display: flex;
         align-items: center;
         gap: 1rem;
@@ -272,21 +272,22 @@
     }
     
     .content__header__text {
-        font-size: var(--size-l);
+        font-size: var(--size-xs);
         font-weight: 500;
     }
     
     .content__header__dot {
-        font-size: var(--size-xl);
+        font-size: var(--size-s);
     }
     
     .content__main {
         width: 100vw;
         display: flex;
         flex-direction: row;
-        padding-top: 0.5rem;
-        gap: 1rem;
+        padding-top: unset;
+        gap: 0.5rem;
         justify-content: flex-start;
+        align-items: baseline;
         padding-left: 1rem;
     }
     
@@ -294,8 +295,7 @@
         background-color: var(--color-accent800);
         color: var(--color-accent300);
         font-size: var(--size-xxs);
-    
-        padding: 0.6em;
+        padding: 0.5em;
         padding-left: 1em;
         border-radius: 6px;
         border: none;
@@ -328,7 +328,7 @@
         pointer-events: none;
         /* Ensure the icon is below the input field */
         z-index: 1;
-    }  
+    }
 }
 
 /* md */

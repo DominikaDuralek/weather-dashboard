@@ -37,6 +37,18 @@
 /* sm */
 /* @media (min-width: 640px) {} */
 
+@media screen and (orientation:landscape) {
+    .tables__table-container {
+        width: 88rem;
+        height: auto;
+        background-color: var(--color-slate800);
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+        border-radius: 6px;    
+    }
+}
+
 /* md */
 /* @media (min-width: 768px) {} */
 
