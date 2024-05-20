@@ -21,7 +21,7 @@
     position: sticky;
     top: 0px;
 
-    font-size: var(--size-xs);
+    font-size: var(--size-s);
 }
 
 .table__container {

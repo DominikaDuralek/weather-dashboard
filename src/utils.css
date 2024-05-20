@@ -263,7 +263,7 @@
 @media screen and (orientation:landscape) {
     .content__header {
         width: 100vw;
-        min-height: 3rem;
+        min-height: 4rem;
         display: flex;
         align-items: center;
         gap: 1rem;
@@ -272,12 +272,12 @@
     }
     
     .content__header__text {
-        font-size: var(--size-base);
+        font-size: var(--size-l);
         font-weight: 500;
     }
     
     .content__header__dot {
-        font-size: var(--size-l);
+        font-size: var(--size-xl);
     }
     
     .content__main {
