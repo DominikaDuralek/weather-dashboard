@@ -159,8 +159,7 @@ mat-cell {
 @media screen and (orientation:landscape) {
     .table__settings {
         gap: 1rem;
-        width: auto;
-        font-size: var(--size-xxs);
+        /* width: 100%; */
     }
 
     mat-button-toggle-group {
@@ -169,9 +168,8 @@ mat-cell {
 
     mat-button-toggle {
         width: 4rem;
-        height: 1.15rem;
+        height: 1.7rem;
         text-align: center;
-        font-size: var(--size-xxs);
     }
 
     mat-table {
