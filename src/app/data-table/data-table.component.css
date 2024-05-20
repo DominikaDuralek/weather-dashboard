@@ -160,6 +160,7 @@ mat-cell {
     .table__settings {
         gap: 1rem;
         width: auto;
+        font-size: var(--size-xxs);
     }
 
     mat-button-toggle-group {
@@ -168,8 +169,9 @@ mat-cell {
 
     mat-button-toggle {
         width: 4rem;
-        height: 1.7rem;
+        height: 1.15rem;
         text-align: center;
+        font-size: var(--size-xxs);
     }
 
     mat-table {

@@ -294,7 +294,7 @@
     .settings-item {
         background-color: var(--color-accent800);
         color: var(--color-accent300);
-        font-size: var(--size-xs);
+        font-size: var(--size-xxs);
         padding: 0.5em;
         padding-left: 1em;
         border-radius: 6px;
