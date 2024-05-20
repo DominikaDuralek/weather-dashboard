@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    /* colors */
-    --color-slate900: #0f172a;
+    /* OLD colors */
+    /* --color-slate900: #0f172a;
     --color-slate800: #1e293b;
     --color-slate700: #334155;
     --color-slate200: #e2e8f0;
@@ -12,7 +12,21 @@
     --color-accent500: #3b82f6;
     --color-accent400: #60a5fa;
     --color-accent300: #93c5fd;
-    --color-light: #e2e8f0;
+    --color-light: #e2e8f0; */
+
+    /* colors */
+    --color-dark: #333136;
+    --color-slate800: #47454A;
+    --color-slate700: #47454A;
+    --color-slate200: #ffffff;
+    --color-slate100: #ffffff;
+    --color-accent900: #656369;
+    --color-accent800: #656369;
+    --color-accent700: #656369;
+    --color-accent500: #8b8990;
+    --color-accent400: #ffffff;
+    --color-accent300: #ffffff;
+    --color-light: #ffffff;
 
     /* font sizes */
     --size-xxs: 0.5rem;
@@ -34,7 +48,7 @@
 
 .light-mode {
     /* dark turns to light */
-    --color-slate900: #e2e8f0;
+    --color-dark: #e2e8f0;
     --color-slate800: #f1f5f9;
     --color-slate200: #0f172a;
     --color-slate100: #1e293b;
@@ -57,7 +71,7 @@ body {
     height: 100%;
     width: 100%;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: var(--color-slate900);
+    background-color: var(--color-dark);
     color: var(--color-slate100);
     overflow: auto;
 }
@@ -91,12 +105,10 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-
     background-image: url('assets/select-arrow.svg');
     background-size: 0.6em 0.6em;
     background-repeat: no-repeat;
     background-position: right 1em center;
-
     min-width: 4.5rem;
     border: none !important;
     outline: none !important;
@@ -116,61 +128,19 @@ input[type="week"]::-webkit-calendar-picker-indicator {
     z-index: 2;
 }
 
-/* xs */
-/* @media (min-width: 475px) {} */
-
-/* sm */
-@media (min-width: 640px) {
-}
-
 @media screen and (orientation:landscape) {
     select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    
-        background-image: url('assets/select-arrow.svg');
-        background-size: 0.6em 0.6em;
-        background-repeat: no-repeat;
-        background-position: right 1em center;
-    
         min-width: unset;
-        border: none !important;
-        outline: none !important;
     }
 }
-
-/* md */
-/* @media (min-width: 768px) {} */
-
-/* lg */
-/* @media (min-width: 1024px) {} */
-
-/* xl */
-/* @media (min-width: 1280px) {} */
 
 /* 2xl */
 @media (min-width: 1536px) {
     body {
-        height: 100%;
-        font-family: Roboto, "Helvetica Neue", sans-serif;
-        background-color: var(--color-slate900);
-        color: var(--color-slate100);
         overflow: hidden;
     }
 
     select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    
-        background-image: url('assets/select-arrow.svg');
-        background-size: 0.6em 0.6em;
-        background-repeat: no-repeat;
-        background-position: right 1em center;
-    
         min-width: 8rem;
-        border: none !important;
-        outline: none !important;
     }
 }

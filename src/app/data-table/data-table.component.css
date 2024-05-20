@@ -14,13 +14,10 @@
     align-items: center;
     padding-left: 1rem;
     padding-bottom: 1rem;
-
     width: 232%;
-
     background-color: var(--color-slate800);
     position: sticky;
     top: 0px;
-
     font-size: var(--size-s);
 }
 
@@ -32,7 +29,7 @@
 mat-button-toggle-group {
     border: 0;
     outline: 0;
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
 mat-button-toggle {
@@ -41,10 +38,8 @@ mat-button-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-color: var(--color-accent800);
     color: var(--color-accent300);
-
     font-size: var(--size-xs);
 }
 
@@ -56,7 +51,7 @@ mat-button-toggle {
 
 /* Custom hover styles for mat-button-toggle */
 .mat-button-toggle:hover {
-    background-color: var(--color-accent400);
+    background-color: var(--color-accent500);
 }
 
 mat-table {
@@ -70,9 +65,7 @@ mat-header-cell {
     font-weight: bold;
     border-right: dashed var(--color-slate700) 1px;
     font-size: var(--size-xs);
-
     min-width: 3rem;
-
     justify-content: center;
 }
 
@@ -81,32 +74,25 @@ mat-cell {
     border-right: dashed var(--color-slate700) 1px;
     font-size: var(--size-xs);
     text-wrap: nowrap;
-
     border-top: 1px var(--color-slate700) solid;
-
     min-width: 3rem;
     height: 1rem;
-
     justify-content: center;
 }
 
 .mat-column-id {
-    /* flex: 0 0 8%; */
     min-width: 3rem;
 }
 
 .mat-column-date {
-    /* flex: 0 0 8%; */
     min-width: 4rem;
 }
 
 .mat-column-time {
-    /* flex: 0 0 8%; */
     min-width: 3rem;
 }
 
 .mat-column-temperature {
-    /* flex: 0 0 8%; */
     min-width: 3rem;
 }
 
@@ -117,53 +103,15 @@ mat-cell {
 /* xxs */
 @media (min-width: 375px) {
     .table__settings {
-        display: flex;
         gap: 1rem;
-        align-items: center;
-        padding-left: 1rem;
-        padding-bottom: 1rem;
         width: auto;
-        position: sticky;
-        top: 0px;
         margin-top: 0.5rem;
     }
-
-    mat-table {
-        background: none;
-        max-height: 30.5rem;
-        border-collapse: collapse;
-    }
-
-    mat-header-cell {
-        font-weight: bold;
-        font-size: var(--size-xs);
-        min-width: 3rem;
-        justify-content: center;
-    }
-
-    mat-cell {
-        font-size: var(--size-xs);
-        text-wrap: nowrap;
-        min-width: 3rem;
-        height: 1rem;
-        justify-content: center;
-    }
 }
-
-/* xs */
-/* @media (min-width: 475px) {} */
-
-/* sm */
-/* @media (min-width: 640px) {} */
 
 @media screen and (orientation:landscape) {
     .table__settings {
         gap: 1rem;
-        /* width: 100%; */
-    }
-
-    mat-button-toggle-group {
-        border-radius: 6px;
     }
 
     mat-button-toggle {
@@ -179,76 +127,39 @@ mat-cell {
     mat-header-cell {
         font-size: var(--size-xs);
         justify-content: center;
-
-        /* min-width: 4rem; */
     }
 
     mat-cell {
-        padding: 1em;
         font-size: var(--size-xs);
         text-wrap: center;
-
-        /* min-width: 4rem; */
-        /* display: inline-block; */
     }
 }
 
 /* md */
-/* @media (min-width: 768px) {} */
+@media (min-width: 768px) {
+    mat-button-toggle {
+        width: 4rem;
+        height: 1.9rem;
+    }
+
+    mat-cell {
+        text-wrap: center;
+    }
+}
 
 /* lg */
-/* @media (min-width: 1024px) {} */
-
-/* xl */
-/* @media (min-width: 1280px) {} */
-
-/* 2xl */
-@media (min-width: 1536px) {
-    :host {
-        display: block;
-        height: 100%;
-        width: 100%;
-
-        overflow-x: auto;
-        overflow-y: auto;
-    }
-
+@media (min-width: 1024px) {
     .table__settings {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        padding-left: 1rem;
-        padding-bottom: 1rem;
         width: auto;
-        position: sticky;
-        top: 0px;
-    }
-
-    .table__container {
-        height: 100%;
-        width: 100%;
     }
 
     mat-button-toggle-group {
         border: 0;
         outline: 0;
-        border-radius: 6px;
     }
 
     mat-button-toggle {
-        width: 4rem;
-        height: 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-size: var(--size-xs);
-    }
-
-    mat-table {
-        background: none;
-        max-height: 30.5rem;
-        border-collapse: collapse;
+        height: 1.85rem;
     }
 
     mat-header-cell {
@@ -257,7 +168,6 @@ mat-cell {
     }
 
     mat-cell {
-        border-right: dashed var(--color-slate700) 1px;
         padding: 0.75em;
         font-size: var(--size-s);
         text-wrap: unset;
@@ -311,5 +221,13 @@ mat-cell {
 
     .mat-column-pm25 {
         flex: 0 0 8%;
+    }
+}
+
+
+/* 2xl */
+@media (min-width: 1536px) {
+    mat-button-toggle {
+        height: 2rem;
     }
 }

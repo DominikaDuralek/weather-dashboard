@@ -45,7 +45,23 @@ export class DataChartComponent {
           enabled: true,
           easing: 'easeinout',
           speed: 500,
-      }
+        },
+        toolbar: {
+          show: true,
+          offsetX: 0,
+          offsetY: 0,
+          tools: {
+            download: false,
+            selection: true,
+            zoom: false,
+            zoomin: true,
+            zoomout: true,
+            pan: false,
+            reset: true,
+            customIcons: []
+          },
+          autoSelected: 'zoom' 
+        },
       },
       series: [
         {
@@ -56,7 +72,8 @@ export class DataChartComponent {
         categories: initialXaxisArray,
         labels: {
           style: {
-            colors: '#93c5fd',
+            colors: '#ffffff',
+            fontSize: '12px'
           },
           rotateAlways: true,
           formatter: function (value: string) {
@@ -73,7 +90,7 @@ export class DataChartComponent {
         max: initialMinMax[1],
         labels: {
           style: {
-            colors: '#93c5fd'
+            colors: '#ffffff'
           },
           formatter: function (val: number) {
             return val.toFixed(1);
@@ -87,13 +104,33 @@ export class DataChartComponent {
       tooltip: {
         theme: 'dark',
         style: {
-          fontSize: '12px'
+          fontSize: '10px'
         },
         custom: function({dataPointIndex}: {dataPointIndex: number}) {
           return `<div>Time: ${initialXaxisArray[dataPointIndex]}</div>
           <div>Value: ${initialValuesArray[dataPointIndex]}</div>`;
         }
-      }
+      },
+      colors: ['#c23124'],
+      responsive: [
+        {
+          breakpoint: 680,
+          options: {
+            stroke: {
+              curve: 'straight',
+              width: 1,
+            },
+            xaxis: {
+              labels: {
+                style: {
+                  colors: '#ffffff',
+                  fontSize: '8px'
+                },
+              },
+            },
+          }
+        },
+      ]
     };
   }
 
@@ -192,7 +229,7 @@ export class DataChartComponent {
         categories: dateTimeArray,
         labels: {
           style: {
-            colors: '#93c5fd',
+            colors: '#ffffff',
           },
           rotate: 0,
           // rotateAlways: false,

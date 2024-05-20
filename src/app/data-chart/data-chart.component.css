@@ -19,8 +19,8 @@
 
 .chart-container {
     display: flex;
-    height: 92%;
-    width:100%;
+    width: 100%;
+    height: 90%;
     margin-top: 0.25rem;
 }
 
@@ -31,39 +31,10 @@ apx-chart {
 
 /* xxs */
 @media (min-width: 375px) {
-    :host {
-        display:block;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    
-    .chart__settings {
-        display: flex;
-        gap: 0.5rem;
-        padding-left: 1rem;
-    }
-    
-    .weekPicker {
-        display: none;
-    }
-    
     .chart-container {
-        display: flex;
-        height: 92%;
-        width:100%;
         margin-top: 0.5rem;
     }
-    
-    /* apx-chart {
-        height:100%;
-        width:100%;
-    } */
 }
-
-/* xs */
-/* @media (min-width: 475px) {} */
 
 @media screen and (orientation:landscape) {
     :host {
@@ -86,58 +57,27 @@ apx-chart {
     
     .chart-container {
         display: flex;
-        height: 92%;
+        height: 90%;
         width:100%;
-
         margin-top: unset;
-    }
-    
-    apx-chart {
-        height:100%;
-        width: 100%;
     }
 }
 
-/* sm */
-/* @media (min-width: 640px) {} */
-
-/* md */
-/* @media (min-width: 768px) {} */
-
 /* lg */
-/* @media (min-width: 1024px) {} */
-
-/* xl */
-/* @media (min-width: 1280px) {} */
-
-/* 2xl */
-@media (min-width: 1536px) {
-    :host {
-        display:block;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    
+@media (min-width: 1024px) {
     .chart__settings {
-        display: flex;
         gap: 1rem;
-        padding-left: 1rem;
-    }
-    
-    .weekPicker {
-        display: none;
-    }
-    
-    .chart-container {
-        display: flex;
-        height: 92%;
-        width:100%;
     }
     
     apx-chart {
         height:100%;
         width:100%;
+    }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+    .chart-container {
+        margin-top: unset;
     }
 }
