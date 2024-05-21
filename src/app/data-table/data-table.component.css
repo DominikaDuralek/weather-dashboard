@@ -14,11 +14,12 @@
     align-items: center;
     padding-left: 1rem;
     padding-bottom: 1rem;
-    width: 232%;
     background-color: var(--color-slate800);
     position: sticky;
     top: 0px;
     font-size: var(--size-s);
+
+    width: 51rem;
 }
 
 .table__container {
@@ -63,7 +64,7 @@ mat-table {
 mat-header-cell {
     color: var(--color-slate200);
     font-weight: bold;
-    border-right: dashed var(--color-slate700) 1px;
+    border-right: dashed black 1px;
     font-size: var(--size-xs);
     min-width: 3rem;
     justify-content: center;
@@ -71,29 +72,61 @@ mat-header-cell {
 
 mat-cell {
     color: var(--color-slate200);
-    border-right: dashed var(--color-slate700) 1px;
+    border-right: dashed black 1px;
     font-size: var(--size-xs);
     text-wrap: nowrap;
-    border-top: 1px var(--color-slate700) solid;
+    border-top: 1px var(--color-slate800) solid;
     min-width: 3rem;
     height: 1rem;
     justify-content: center;
 }
 
 .mat-column-id {
-    min-width: 3rem;
-}
-
-.mat-column-date {
     min-width: 4rem;
 }
 
+.mat-column-date {
+    min-width: 5rem;
+}
+
 .mat-column-time {
-    min-width: 3rem;
+    min-width: 4rem;
 }
 
 .mat-column-temperature {
+    min-width: 4rem;
+}
+
+.mat-column-humidity {
+    min-width: 4rem;
+}
+
+.mat-column-pressure {
+    min-width: 5rem;
+}
+
+.mat-column-rain {
+    min-width: 5rem;
+}
+
+.mat-column-windspeed {
+    min-width: 5rem;
+}
+
+.mat-column-winddirection {
     min-width: 3rem;
+}
+
+.mat-column-light {
+    min-width: 4rem;
+}
+
+.mat-column-pm10 {
+    min-width: 4rem;
+}
+
+.mat-column-pm25 {
+    min-width: 4rem;
 }
 
 .mat-mdc-row:hover .mat-mdc-cell {
@@ -104,7 +137,6 @@ mat-cell {
 @media (min-width: 375px) {
     .table__settings {
         gap: 1rem;
-        width: auto;
         margin-top: 0.5rem;
     }
 }
@@ -150,7 +182,7 @@ mat-cell {
 /* lg */
 @media (min-width: 1024px) {
     .table__settings {
-        width: auto;
+        width: 51rem;
     }
 
     mat-button-toggle-group {

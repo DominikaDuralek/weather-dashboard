@@ -7,16 +7,16 @@
 
         <label for="table__sort">Sort by:</label>
         <select #tableSortValue name="table__sort" id="table__sort" class="settings-item" (change)="onSortValueChange()">
-            <option value=0>Id</option>
-            <option value=1>Date</option>
-            <option value=3>Temperature</option>
-            <option value=4>Humidity</option>
-            <option value=5>Pressure</option>
-            <option value=6>Rain</option>
-            <option value=7>Wind Speed</option>
-            <option value=9>Light</option>
-            <option value=10>Pm 10</option>
-            <option value=11>Pm 2.5</option>
+            <option value=0 class="option">Id</option>
+            <option value=1 class="option">Date</option>
+            <option value=3 class="option">Temperature</option>
+            <option value=4 class="option">Humidity</option>
+            <option value=5 class="option">Pressure</option>
+            <option value=6 class="option">Rain</option>
+            <option value=7 class="option">Wind Speed</option>
+            <option value=9 class="option">Light</option>
+            <option value=10 class="option">Pm 10</option>
+            <option value=11 class="option">Pm 2.5</option>
         </select>
 
         <mat-button-toggle-group [hideSingleSelectionIndicator]="true" #tableSortOrderButton="matButtonToggleGroup" (change)="onSortOrderChange($event)">

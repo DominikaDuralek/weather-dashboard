@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef, inject, Output, EventEmitter } from '@angular/core';
 import { WeatherDataService } from '../weather-data.service'
 import { ChartComponent, NgApexchartsModule } from "ng-apexcharts";
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'data-chart',
@@ -47,20 +48,20 @@ export class DataChartComponent {
           speed: 500,
         },
         toolbar: {
-          show: true,
+          show: false,
           offsetX: 0,
           offsetY: 0,
           tools: {
             download: false,
-            selection: true,
+            selection: false,
             zoom: false,
-            zoomin: true,
-            zoomout: true,
+            zoomin: false,
+            zoomout: false,
             pan: false,
-            reset: true,
+            reset: false,
             customIcons: []
           },
-          autoSelected: 'zoom' 
+          autoSelected: 'zoom',
         },
       },
       series: [
@@ -195,7 +196,7 @@ export class DataChartComponent {
           categories: xaxisArray,
           labels: {
             style: {
-              colors: '#93c5fd',
+              colors: '#ffffff',
             },
             rotateAlways: true,
             formatter: function (value: string) {

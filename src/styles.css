@@ -48,13 +48,21 @@
 
 .light-mode {
     /* dark turns to light */
-    --color-dark: #e2e8f0;
+    /* --color-dark: #e2e8f0;
     --color-slate800: #f1f5f9;
     --color-slate200: #0f172a;
     --color-slate100: #1e293b;
 
     --color-accent900: #1d4ed8;
-    --color-accent800: #1d4ed8;
+    --color-accent800: #1d4ed8; */
+
+    --color-dark: #d9d8da;
+    --color-slate800: #bfbdc1;
+    --color-slate200: #656369;
+    --color-slate100: #47454A;
+
+    --color-accent900: #98969c;
+    --color-accent800: #98969c;
 }
 
 * {
@@ -126,6 +134,17 @@ input[type="week"]::-webkit-calendar-picker-indicator {
     opacity: 0;
     position: relative;
     z-index: 2;
+}
+
+input[type="date"],
+input[type="week"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+option:checked {
+    background-color: var(--color-accent500);
 }
 
 @media screen and (orientation:landscape) {
