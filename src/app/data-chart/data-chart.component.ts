@@ -231,6 +231,7 @@ export class DataChartComponent {
         labels: {
           style: {
             colors: '#ffffff',
+            fontSize: '12px'
           },
           rotate: 0,
           // rotateAlways: false,
