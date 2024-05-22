@@ -64,7 +64,7 @@ mat-table {
 mat-header-cell {
     color: var(--color-slate200);
     font-weight: bold;
-    border-right: dashed black 1px;
+    border-right: dashed var(--color-accent800) 1px;
     font-size: var(--size-xs);
     min-width: 3rem;
     justify-content: center;
@@ -72,10 +72,10 @@ mat-header-cell {
 
 mat-cell {
     color: var(--color-slate200);
-    border-right: dashed black 1px;
+    border-right: dashed var(--color-accent800) 1px;
     font-size: var(--size-xs);
     text-wrap: nowrap;
-    border-top: 1px var(--color-slate800) solid;
+    border-top: 1px var(--color-accent800) solid;
     min-width: 3rem;
     height: 1rem;
     justify-content: center;
@@ -130,7 +130,7 @@ mat-cell {
 }
 
 .mat-mdc-row:hover .mat-mdc-cell {
-    background-color: var(--color-slate900);
+    background-color: var(--color-dark);
 }
 
 /* xxs */
