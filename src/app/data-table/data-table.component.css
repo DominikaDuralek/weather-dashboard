@@ -3,9 +3,6 @@
     display: block;
     height: 100%;
     width: 100%;
-
-    overflow-x: auto;
-    overflow-y: auto;
 }
 
 .table__settings {
@@ -13,14 +10,36 @@
     gap: 0.5rem;
     align-items: center;
     padding-left: 1rem;
-    padding-bottom: 1rem;
     background-color: var(--color-slate800);
     font-size: var(--size-s);
+
+    width: 100%;
+    position: sticky;
+    top: 0;
+    overflow-x: scroll;
+    overflow-y: scroll;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.table__settings::-webkit-scrollbar {
+    display: none;
 }
 
 .table__container {
     height: 100%;
     width: 100%;
+    margin-top: 2rem;
+
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+mat-table {
+    background: none;
+    max-height: 30.5rem;
+    border-collapse: collapse;
 }
 
 mat-button-toggle-group {
@@ -51,12 +70,6 @@ mat-button-toggle {
     background-color: var(--color-accent500);
 }
 
-mat-table {
-    background: none;
-    max-height: 30.5rem;
-    border-collapse: collapse;
-}
-
 mat-header-cell {
     color: var(--color-slate200);
     font-weight: bold;
@@ -78,11 +91,11 @@ mat-cell {
 }
 
 .mat-column-id {
-    min-width: 4rem;
+    min-width: 5rem;
 }
 
 .mat-column-date {
-    min-width: 5rem;
+    min-width: 6rem;
 }
 
 .mat-column-time {
@@ -118,11 +131,11 @@ mat-cell {
 }
 
 .mat-column-pm10 {
-    min-width: 4rem;
+    min-width: 6rem;
 }
 
 .mat-column-pm25 {
-    min-width: 4rem;
+    min-width: 6rem;
 }
 
 .mat-mdc-row:hover .mat-mdc-cell {
@@ -165,6 +178,8 @@ mat-cell {
 
 /* md */
 @media (min-width: 768px) {
+    
+    
     mat-button-toggle {
         width: 4rem;
         height: 1.9rem;
@@ -177,6 +192,14 @@ mat-cell {
 
 /* lg */
 @media (min-width: 1024px) {
+    .table__container {
+        height: 75%;
+    
+        overflow-x: auto;
+        overflow-y: auto;
+        scrollbar-width: 10px;
+    }
+
     mat-button-toggle-group {
         border: 0;
         outline: 0;
