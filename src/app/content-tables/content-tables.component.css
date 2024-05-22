@@ -42,10 +42,17 @@
     }
 }
 
+/* xl */
+@media (min-width: 1280px) {
+    .tables__table-container {
+        width: 60rem;
+    }
+}
+
 /* 2xl */
 @media (min-width: 1536px) {
     .tables__table-container {
         width: 88rem;
-        padding: 1rem;  
+        padding: 1rem;
     }
 }

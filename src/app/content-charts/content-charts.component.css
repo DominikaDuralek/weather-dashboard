@@ -121,6 +121,13 @@
     }
 }
 
+/* xl */
+@media (min-width: 1280px) {
+    .tables__table-container {
+        width: 60rem;
+    }
+}
+
 /* 2xl */
 @media (min-width: 1536px) {
     .charts__content {
